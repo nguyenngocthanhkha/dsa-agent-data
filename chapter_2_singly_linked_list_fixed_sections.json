@@ -1,0 +1,2000 @@
+{
+  "chapter": {
+    "id": "CH02",
+    "title": "Cấu trúc dữ liệu tuyến tính",
+    "order": 2
+  },
+  "lesson": {
+    "id": "LES_02_02",
+    "title": "Danh sách liên kết",
+    "order": 2
+  },
+  "sections": [
+    {
+      "id": "SEC_02_02_01",
+      "title": "Danh sách liên kết",
+      "order": 1,
+      "contents": [
+        {
+          "id": "CONT_02_02_01",
+          "order": 1,
+          "type": "text",
+          "title": "Danh sách liên kết",
+          "content": "Trong phần trước, sử dụng mảng để tổ chức dữ liệu cho danh sách có hạn chế là lãng phí bộ nhớ và khi thực hiện các thao tác thêm và xóa có độ phức tạp lớn. Trong phần này trình bày một cách khác tổ chức dữ liệu cho danh sách sử dụng ô nhớ cấp phát động, gọi chung là danh sách liên kết (linked list).",
+          "source": "Bài giảng Chương 2 - mục 2.2"
+        },
+        {
+          "id": "CONT_02_02_02",
+          "order": 2,
+          "type": "text",
+          "title": "Các loại danh sách liên kết",
+          "content": "Ba loại danh sách liên kết được giới thiệu gồm: danh sách liên kết đơn (single linked list), danh sách liên kết vòng (circular linked list) và danh sách hai liên kết (doubly linked list).",
+          "source": "Bài giảng Chương 2 - mục 2.2"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_02_02",
+      "title": "Danh sách liên kết đơn",
+      "order": 2,
+      "contents": [
+        {
+          "id": "CONT_02_02_03",
+          "order": 1,
+          "type": "text",
+          "title": "Tổ chức dữ liệu",
+          "content": "Mỗi phần tử của danh sách được lưu trong một ô nhớ gồm 2 ngăn (trường): trường data lưu dữ liệu của một phần tử, ví dụ dữ liệu của một sinh viên; trường next lưu địa chỉ của ô nhớ chứa phần tử kế tiếp trong danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1.1"
+        },
+        {
+          "id": "CONT_02_02_04",
+          "order": 2,
+          "type": "image",
+          "title": "Tổ chức dữ liệu danh sách liên kết đơn",
+          "content": "Hình 2-17 - Tổ chức dữ liệu danh sách liên kết đơn",
+          "file": "images/hinh 2-17.png",
+          "source": "Bài giảng Chương 2 - mục 2.2.1.1"
+        },
+        {
+          "id": "CONT_02_02_05",
+          "order": 3,
+          "type": "text",
+          "title": "Quản lý danh sách liên kết đơn",
+          "content": "Để quản lý một danh sách liên kết đơn chỉ cần quản lý phần tử đầu tiên của danh sách. Một danh sách l = (a0, a1, ..., an-1) được lưu trong danh sách liên kết đơn như sau:",
+          "source": "Bài giảng Chương 2 - mục 2.2.1.1"
+        },
+        {
+          "id": "CONT_02_02_06",
+          "order": 4,
+          "type": "image",
+          "title": "Hình ảnh một danh sách liên kết đơn",
+          "content": "Hình 2-18 - Hình ảnh một danh sách liên kết đơn",
+          "file": "images/hinh 2-18.png",
+          "source": "Bài giảng Chương 2 - mục 2.2.1.1"
+        },
+        {
+          "id": "CONT_02_02_07",
+          "order": 5,
+          "type": "text",
+          "title": "Đặc điểm bộ nhớ của danh sách liên kết đơn",
+          "content": "Khác với mảng, danh sách liên kết đơn sử dụng ô nhớ cấp phát động nên các ô nhớ lưu các phần tử trong danh sách liên kết đơn không liên tiếp nhau trong bộ nhớ. Để gắn kết các phần tử với nhau tạo thành một danh sách có thứ tự cần có trường next.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1.1"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_02_03",
+      "title": "Các thao tác trên danh sách liên kết đơn",
+      "order": 3,
+      "contents": [
+        {
+          "id": "CONT_02_02_08",
+          "order": 1,
+          "type": "text",
+          "title": "Khởi tạo",
+          "content": "Khởi tạo danh sách liên kết đơn bằng cách gán phần tử đầu của danh sách rỗng.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1.2"
+        },
+        {
+          "id": "CONT_02_02_09",
+          "order": 2,
+          "type": "text",
+          "title": "Thuật toán khởi tạo",
+          "content": "Gán phần tử đầu danh sách rỗng.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1.2"
+        },
+        {
+          "id": "CONT_02_02_10",
+          "order": 3,
+          "type": "code",
+          "title": "Cài đặt khởi tạo danh sách liên kết đơn",
+          "content": "void initialize(SLLNode* &head)\n{\n    head = nullptr;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.1.2"
+        },
+        {
+          "id": "CONT_02_02_11",
+          "order": 4,
+          "type": "text",
+          "title": "Ví dụ khởi tạo danh sách sinh viên",
+          "content": "Ví dụ khởi tạo danh sách sinh viên.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1.2"
+        },
+        {
+          "id": "CONT_02_02_12",
+          "order": 5,
+          "type": "code",
+          "title": "Cài đặt khởi tạo danh sách sinh viên",
+          "content": "void initialize(SLLStudents* &head)\n{\n    head = nullptr;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.1.2"
+        },
+        {
+          "id": "CONT_02_02_13",
+          "order": 6,
+          "type": "text",
+          "title": "Thêm một phần tử vào danh sách",
+          "content": "Thêm phần tử x vào ngay sau phần tử p của danh sách liên kết đơn.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1.2"
+        },
+        {
+          "id": "CONT_02_02_14",
+          "order": 7,
+          "type": "image",
+          "title": "Thêm phần tử sau vị trí p trong danh sách liên kết đơn",
+          "content": "Hình minh họa thao tác thêm phần tử x vào sau vị trí p trong danh sách liên kết đơn",
+          "file": "images/hinh 2-19.png",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_15",
+          "order": 8,
+          "type": "text",
+          "title": "Thuật toán thêm phần tử sau vị trí p",
+          "content": "Thuật toán thêm phần tử vào sau vị trí p trong danh sách liên kết đơn. Input: phần tử cần thêm x, vị trí p. Output: danh sách sau khi thêm. Action: Tạo phần tử q của danh sách liên kết đơn; đưa x vào dữ liệu của q; cho q liên kết đến phần tử sau p; cho p liên kết đến q.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_16",
+          "order": 9,
+          "type": "code",
+          "title": "Cài đặt thêm phần tử sau vị trí p",
+          "content": "void insert(SLLNode *p, ElementType x)\n{\n    SLLNode *q = new SLLNode;\n    q->data = x;\n    q->next = p->next;\n    p->next = q;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_17",
+          "order": 10,
+          "type": "code",
+          "title": "Ví dụ thêm sinh viên sau vị trí p",
+          "content": "void insert(SLLStudents *p, Student x)\n{\n    SLLStudents *q = new SLLStudents;\n    q->data = x;\n    q->next = p->next;\n    p->next = q;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_18",
+          "order": 11,
+          "type": "text",
+          "title": "Độ phức tạp thao tác thêm phần tử",
+          "content": "Độ phức tạp thời gian của thao tác thêm một phần tử vào danh sách liên kết đơn là O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_19",
+          "order": 12,
+          "type": "text",
+          "title": "Lưu ý khi thêm phần tử",
+          "content": "Để thêm được một phần tử vào danh sách thì phải biết phần tử ngay trước nó. Do đó nếu thêm vào đầu danh sách sẽ không thực hiện được theo thuật toán này. Thêm một phần tử vào đầu danh sách sẽ được thực hiện theo cách khác.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_20",
+          "order": 13,
+          "type": "image",
+          "title": "Thêm một phần tử vào đầu danh sách liên kết đơn",
+          "content": "Hình minh họa thao tác thêm một phần tử x vào đầu danh sách liên kết đơn.",
+          "file": "images/hinh 2-20.png",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_21",
+          "order": 14,
+          "type": "text",
+          "title": "Thuật toán thêm phần tử vào đầu danh sách",
+          "content": "Thuật toán thêm một phần tử vào đầu danh sách liên kết đơn. Input: phần tử đầu danh sách cần thêm, phần tử cần thêm x. Output: danh sách sau khi thêm. Action: Tạo phần tử q của danh sách liên kết đơn; đưa x vào dữ liệu của q; cho q liên kết đến phần tử đầu; cho phần tử đầu chuyển đến q.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_22",
+          "order": 15,
+          "type": "code",
+          "title": "Cài đặt thêm phần tử vào đầu danh sách",
+          "content": "void insertFirst(SLLNode* &head, ElementType x)\n{\n    SLLNode *q = new SLLNode;\n    q->data = x;\n    q->next = head;\n    head = q;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_23",
+          "order": 16,
+          "type": "image",
+          "title": "Xóa một phần tử trong danh sách liên kết đơn",
+          "content": "Hình minh họa thao tác xóa phần tử ngay sau phần tử p trong danh sách liên kết đơn.",
+          "file": "images/hinh 2-21.png",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_24",
+          "order": 17,
+          "type": "text",
+          "title": "Thuật toán xóa một phần tử trong danh sách",
+          "content": "Thuật toán xóa một phần tử trong danh sách liên kết đơn. Input: vị trí p ngay trước phần tử cần xóa. Output: danh sách sau khi xóa. Action: Gọi q là phần tử ngay sau p; cho p liên kết đến phần tử sau q; thu hồi ô nhớ q.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_25",
+          "order": 18,
+          "type": "code",
+          "title": "Cài đặt xóa một phần tử sau vị trí p",
+          "content": "void delete(SLLNode *p)\n{\n    SLLNode *q;\n    q = p->next;\n    p->next = q->next;\n    delete q;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_26",
+          "order": 19,
+          "type": "text",
+          "title": "Ví dụ xóa một sinh viên sau vị trí p",
+          "content": "Ví dụ: xóa một sinh viên sau vị trí p trong danh sách sinh viên.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_27",
+          "order": 20,
+          "type": "code",
+          "title": "Cài đặt xóa một sinh viên sau vị trí p",
+          "content": "void delete(SLLStudents *p)\n{\n    SLLStudents *q;\n    q = p->next;\n    p->next = q->next;\n    delete q;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_28",
+          "order": 21,
+          "type": "text",
+          "title": "Độ phức tạp thao tác xóa một phần tử",
+          "content": "Độ phức tạp thao tác xóa một phần tử ngay sau phần tử p trong danh sách liên kết đơn có độ phức tạp là O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_29",
+          "order": 22,
+          "type": "image",
+          "title": "Xóa phần tử đầu danh sách liên kết đơn",
+          "content": "Hình minh họa thao tác xóa phần tử đầu danh sách liên kết đơn.",
+          "file": "images/hinh 2-22.png",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_30",
+          "order": 23,
+          "type": "text",
+          "title": "Thuật toán xóa phần tử đầu danh sách",
+          "content": "Thuật toán xóa phần tử đầu danh sách. Input: Danh sách cần xóa. Output: Danh sách sau khi xóa. Action: Cho q trỏ vào phần tử đầu danh sách; chuyển phần tử đầu danh sách ra phần tử ngay sau nó; thu hồi ô nhớ q.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_31",
+          "order": 24,
+          "type": "code",
+          "title": "Cài đặt xóa phần tử đầu danh sách",
+          "content": "void deleteFirst(SLLNode* &head)\n{\n    SLLNode *q;\n    q = head;\n    head = q->next;\n    delete q;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_32",
+          "order": 25,
+          "type": "text",
+          "title": "Duyệt danh sách liên kết đơn",
+          "content": "Để duyệt danh sách liên kết đơn phải xuất phát từ phần tử đầu danh sách, sau đó dựa vào trường next để chuyển sang phần tử tiếp theo và lặp lại cho đến khi gặp phần tử rỗng.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_33",
+          "order": 26,
+          "type": "text",
+          "title": "Thuật toán duyệt danh sách liên kết đơn",
+          "content": "Thuật toán duyệt danh sách liên kết đơn. Input: Danh sách cần duyệt. Output: Thứ tự các phần tử được duyệt. Action: Xuất phát p là phần tử đầu danh sách; lặp khi phần tử p còn khác rỗng: thực hiện các thao tác trên phần tử p; p chuyển sang phần tử ngay sau nó.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_34",
+          "order": 27,
+          "type": "code",
+          "title": "Đoạn mã duyệt danh sách liên kết đơn",
+          "content": "p = head;\n\nwhile (p != nullptr)\n{\n    Thao tác trên p;\n    p = p->next;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_35",
+          "order": 28,
+          "type": "text",
+          "title": "Tìm một phần tử trong danh sách liên kết đơn",
+          "content": "Tìm trong danh sách liên kết đơn một phần tử có khóa là x.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_36",
+          "order": 29,
+          "type": "text",
+          "title": "Phương pháp tìm kiếm trong danh sách liên kết đơn",
+          "content": "Vì các phần tử trong danh sách liên kết đơn truy xuất tuần tự nên sử dụng thuật toán tìm tuần tự.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_37",
+          "order": 30,
+          "type": "text",
+          "title": "Cài đặt thao tác tìm phần tử",
+          "content": "Hàm tìm một phần tử trong danh sách theo khóa, kết quả trả về con trỏ đến phần tử tìm được hoặc null nếu không tìm được.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_38",
+          "order": 31,
+          "type": "code",
+          "title": "Cài đặt tìm một phần tử theo khóa",
+          "content": "SLLNode* search(SLLNode *head, KeyType x)\n{\n    SLLNode *p;\n    p = head;\n    while (p != nullptr)\n    {\n        if(p->data.key == x)\n            return p;\n        else\n            p = p->next;\n    }\n    return nullptr;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_39",
+          "order": 32,
+          "type": "text",
+          "title": "Trường key trong thao tác tìm kiếm",
+          "content": "Trong đó key là trường chứa dữ liệu cần tìm có kiểu là KeyType.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_40",
+          "order": 33,
+          "type": "text",
+          "title": "Ví dụ tìm sinh viên theo họ tên",
+          "content": "Ví dụ: hàm tìm một sinh viên trong danh sách liên kết đơn theo họ tên. Kết quả trả về sinh viên tìm được hoặc null nếu không tìm được.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_41",
+          "order": 34,
+          "type": "code",
+          "title": "Cài đặt tìm sinh viên theo họ tên",
+          "content": "SLLStudents* search(SLLStudents *head, string x)\n{\n    SLLStudents *p;\n    p = head;\n    while (p != nullptr)\n    {\n        if(p->data.name == x)\n            return p;\n        else\n            p = p->next;\n    }\n    return nullptr;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_42",
+          "order": 35,
+          "type": "text",
+          "title": "Các cách sắp xếp trên danh sách liên kết đơn",
+          "content": "Để sắp xếp trên danh sách liên kết đơn có hai cách: Đổi dữ liệu trong các nút của danh sách liên kết đơn; đổi liên kết giữa các nút trong danh sách liên kết đơn.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_43",
+          "order": 36,
+          "type": "text",
+          "title": "Thuật toán sắp xếp nổi bọt trên danh sách liên kết đơn",
+          "content": "Thuật toán sắp xếp nổi bọt trên danh sách liên kết đơn theo thứ tự tăng của trường key. Input: Danh sách cần sắp xếp. Output: Danh sách đã sắp xếp. Action: Nếu danh sách rỗng thì dừng; gán biến last rỗng; thực hiện lặp: gán biến p là phần tử đầu danh sách; lặp khi phần tử tiếp theo của p khác last: gán q là phần tử ngay sau p; nếu khóa phần tử tại p lớn hơn khóa phần tử tại q thì đổi dữ liệu hai phần tử p và q, gán last là p; cho p chuyển ra ngay sau p; cho q chuyển ra ngay sau q; cho đến khi last là phần tử ngay sau đầu hoặc last rỗng.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_44",
+          "order": 37,
+          "type": "code",
+          "title": "Cài đặt sắp xếp nổi bọt trên danh sách liên kết đơn",
+          "content": "void BubbleSort(SLLNode *head)\n{\n    SLLNode *p, *q, *last;\n    if (head == nullptr) return;\n    last = nullptr;\n    do{\n        p = head;\n        while (p->next != last)\n        {\n            q = p->next;\n            if (p->data.key > q->data.key)\n            {\n                ElementType tmp = p->data;\n                p->data = q->data;\n                q->data = tmp;\n                last = q;\n            }\n            p = p->next;\n            q = q->next;\n        }\n    } while (last == nullptr || last == head->next);\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_45",
+          "order": 38,
+          "type": "text",
+          "title": "Ví dụ sắp xếp danh sách sinh viên theo điểm trung bình",
+          "content": "Ví dụ: sắp xếp danh sách sinh viên theo thứ tự giảm của điểm trung bình.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_46",
+          "order": 39,
+          "type": "code",
+          "title": "Cài đặt sắp xếp sinh viên theo điểm trung bình",
+          "content": "void SortByGPA(SLLStudents *head)\n{\n    SLLStudent *p, *q, *last;\n    if (head == nullptr) return;\n    last = nullptr;\n    do{\n        p = head;\n        while (p->next != last)\n        {\n            q = p->next;\n            if (p->data.gpa < q->data.gpa)\n            {\n                Student tmp = p->data;\n                p->data = q->data;\n                q->data = tmp;\n                last = q;\n            }\n            p = p->next;\n            q = q->next;\n        }\n    } while (last == nullptr || last == head->next);\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.1"
+        },
+        {
+          "id": "CONT_02_02_47",
+          "order": 40,
+          "type": "text",
+          "title": "Ưu điểm của danh sách liên kết đơn",
+          "content": "Ưu điểm: Khắc phục lãng phí bộ nhớ; thao tác thêm, xóa thực hiện đơn giản.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1.3"
+        },
+        {
+          "id": "CONT_02_02_48",
+          "order": 41,
+          "type": "text",
+          "title": "Nhược điểm của danh sách liên kết đơn",
+          "content": "Nhược điểm: Thao tác với các phần tử là tuần tự; tốn bộ nhớ cho việc lưu liên kết.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1.3"
+        },
+        {
+          "id": "CONT_02_02_49",
+          "order": 42,
+          "type": "text",
+          "title": "Hạn chế của danh sách liên kết đơn",
+          "content": "Một trong những hạn chế của danh sách liên kết đơn là phải quản lý được phần tử đầu tiên của danh sách và những thao tác với một phần tử phải biết phần tử ngay trước nó.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1.3"
+        },
+        {
+          "id": "CONT_02_02_50",
+          "order": 43,
+          "type": "text",
+          "title": "Khắc phục hạn chế của danh sách liên kết đơn",
+          "content": "Những hạn chế này có thể được khắc phục phần nào bởi việc thay đổi kiểu liên kết. Trong phần tiếp theo giới thiệu hai loại danh sách liên kết khác là danh sách liên kết vòng và danh sách hai liên kết.",
+          "source": "Bài giảng Chương 2 - mục 2.2.1.3"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_02_04",
+      "title": "Danh sách liên kết vòng",
+      "order": 4,
+      "contents": [
+        {
+          "id": "CONT_02_02_51",
+          "order": 1,
+          "type": "text",
+          "title": "Danh sách liên kết vòng",
+          "content": "Danh sách liên kết vòng là danh sách liên kết đơn với một thay đổi là phần tử cuối của danh sách liên kết với phần tử đầu tiên. Hình ảnh của danh sách liên kết vòng như hình sau.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_52",
+          "order": 2,
+          "type": "image",
+          "title": "Hình ảnh danh sách liên kết vòng",
+          "content": "Hình ảnh danh sách liên kết vòng.",
+          "file": "images/hinh 2-23.png",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_53",
+          "order": 3,
+          "type": "text",
+          "title": "Đặc điểm quản lý danh sách liên kết vòng",
+          "content": "Với cách tổ chức như trên, trong trường hợp không quan tâm đến thứ tự trước sau của các phần tử, để quản lý danh sách ta chỉ cần quản lý phần tử bất kỳ trong danh sách mà không nhất thiết phải quản lý phần tử đầu tiên vì từ vị trí bất kỳ ta đều có thể truy xuất đến những phần tử còn lại của danh sách bằng cách duyệt tuần tự.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_54",
+          "order": 4,
+          "type": "text",
+          "title": "Tổ chức dữ liệu danh sách liên kết vòng",
+          "content": "Về tổ chức dữ liệu, danh sách liên kết vòng có tổ chức hoàn toàn giống danh sách liên kết đơn. Để quản lý danh sách liên kết vòng ta dùng một biến con trỏ quản lý một phần tử bất kỳ, phần tử này gọi là phần tử hiện tại của danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_55",
+          "order": 5,
+          "type": "text",
+          "title": "Các thao tác trên danh sách liên kết vòng",
+          "content": "Các thao tác trên danh sách liên kết vòng cơ bản giống trên danh sách liên kết đơn. Trong phần này giới thiệu một số thao tác trên danh sách liên kết vòng: Duyệt danh sách liên kết vòng; Thêm một phần tử vào đầu danh sách liên kết vòng; Thêm một phần tử vào cuối danh sách liên kết vòng; Xóa phần tử đầu danh sách liên kết vòng; Xóa phần tử cuối danh sách liên kết vòng.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_56",
+          "order": 6,
+          "type": "text",
+          "title": "Cách tổ chức dữ liệu cho danh sách liên kết vòng",
+          "content": "Cách tổ chức dữ liệu cho danh sách liên kết vòng giống như danh sách liên kết đơn. Các thủ tục trên danh sách liên kết vòng được mô tả như sau:",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_57",
+          "order": 7,
+          "type": "text",
+          "title": "Duyệt danh sách liên kết vòng",
+          "content": "Thao tác duyệt danh sách liên kết vòng được thực hiện tương tự như thao tác duyệt danh sách liên kết đơn với chú ý vị trí của phần tử xuất phát để tránh duyệt lại danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_58",
+          "order": 8,
+          "type": "code",
+          "title": "Cài đặt duyệt danh sách liên kết vòng",
+          "content": "if (head != nullptr)\n{\n    p = head;\n    do\n    {\n        visit(p);\n        p = p->lienKet;\n    }\n    while (p == head);\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_59",
+          "order": 9,
+          "type": "text",
+          "title": "Thêm vào đầu danh sách liên kết vòng",
+          "content": "Để thêm một phần tử vào đầu danh sách liên kết vòng phải tìm được phần tử cuối danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_60",
+          "order": 10,
+          "type": "image",
+          "title": "Thêm vào đầu danh sách liên kết vòng",
+          "content": "Hình minh họa thao tác thêm một phần tử vào đầu danh sách liên kết vòng.",
+          "file": "images/hinh 2-24.png",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_61",
+          "order": 11,
+          "type": "text",
+          "title": "Thuật toán thêm phần tử vào đầu danh sách liên kết vòng",
+          "content": "Thuật toán thêm phần tử vào đầu danh sách liên kết vòng. Input: Danh sách cần thêm, phần tử cần thêm. Output: Danh sách sau khi thêm. Action: Cấp phát một ô nhớ q kiểu danh sách liên kết; đưa phần tử cần thêm vào dữ liệu của q; nếu danh sách rỗng thì: cho q liên kết đến q; gán phần tử q cho đầu danh sách. Ngược lại: xuất phát last từ phần tử đầu; lặp khi phần tử sau last khác đầu: chuyển last sang phần tử ngay sau nó; gán last liên kết đến q; cho q liên kết đến phần tử đầu; gán q cho phần tử đầu.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_62",
+          "order": 12,
+          "type": "code",
+          "title": "Cài đặt thêm phần tử vào đầu danh sách liên kết vòng",
+          "content": "void insertFirst(SLLNode* &head, ElementType x)\n{\n    SLLNode *q, *last;\n    q = new SLLNode;\n    q->data = x;\n    if (head == nullptr)\n    {\n        q->next = q;\n        head = q;\n    }\n    else\n    {\n        last = head;\n        while (last->next != head) last = last->next;\n        last->next = q;\n        q->next = head;\n        head = q;\n    }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_63",
+          "order": 13,
+          "type": "text",
+          "title": "Độ phức tạp thao tác thêm phần tử vào đầu danh sách liên kết vòng",
+          "content": "Độ phức tạp của thao tác thêm phần tử vào đầu danh sách liên kết vòng là O(n), với n là số phần tử của danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_64",
+          "order": 14,
+          "type": "text",
+          "title": "Thêm vào cuối danh sách liên kết vòng",
+          "content": "Để thêm một phần tử vào cuối danh sách liên kết vòng, thực hiện thêm tương tự như thêm vào đầu nhưng thay đổi phần tử đầu.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_65",
+          "order": 15,
+          "type": "image",
+          "title": "Thêm vào cuối danh sách liên kết vòng",
+          "content": "Hình minh họa thao tác thêm một phần tử vào cuối danh sách liên kết vòng.",
+          "file": "images/hinh 2-25.png",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_66",
+          "order": 16,
+          "type": "code",
+          "title": "Cài đặt thêm phần tử vào cuối danh sách liên kết vòng",
+          "content": "void insertFirst(SLLNode* &head, ElementType x)\n{\n    SLLNode *q, *last;\n    q = new SLLNode;\n    q->data = x;\n    q->next = head;\n    if (head == nullptr)\n        head = q;\n    else\n    {\n        last = head;\n        while (last->next != head) last = last->next;\n        last->next = q;\n    }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_67",
+          "order": 17,
+          "type": "text",
+          "title": "Độ phức tạp thao tác thêm vào cuối danh sách liên kết vòng",
+          "content": "Độ phức tạp thuật toán thêm vào cuối danh sách liên kết vòng là O(n), với n là số phần tử của danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_68",
+          "order": 18,
+          "type": "text",
+          "title": "Xóa phần tử đầu danh sách liên kết vòng",
+          "content": "Để xóa phần tử đầu danh sách liên kết vòng, tìm phần tử cuối sau đó xóa phần tử sau phần tử cuối rồi chuyển phần tử đầu đến phần tử tiếp theo.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_69",
+          "order": 19,
+          "type": "text",
+          "title": "Thuật toán xóa phần tử đầu danh sách liên kết vòng",
+          "content": "Thuật toán xóa phần tử đầu danh sách liên kết vòng. Input: Danh sách cần xóa. Output: Danh sách sau khi xóa. Action: Nếu danh sách rỗng thì dừng. Nếu danh sách có 1 phần tử thì: thu hồi ô nhớ đầu; gán phần tử đầu là null. Ngược lại: tìm phần tử last cuối danh sách; cho last liên kết sau phần tử đầu; thu hồi ô nhớ đầu; gán phần tử sau last cho phần tử đầu.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_70",
+          "order": 20,
+          "type": "code",
+          "title": "Cài đặt xóa phần tử đầu danh sách liên kết vòng",
+          "content": "void deleteFirst(SLLNode* &head)\n{\n    if (head == nullptr) return;\n    if (head->next == head)\n    {\n        delete head;\n        head = nullptr;\n    }\n    else\n    {\n        last = head;\n        while (last->next != head) last = last->next;\n        last->next = head->next;\n        delete head;\n        head = last->next;\n    }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_71",
+          "order": 21,
+          "type": "text",
+          "title": "Độ phức tạp thao tác xóa phần tử đầu danh sách liên kết vòng",
+          "content": "Độ phức tạp thao tác xóa phần tử đầu danh sách liên kết vòng là O(n), với n là số phần tử của danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_72",
+          "order": 22,
+          "type": "text",
+          "title": "Xóa phần tử cuối danh sách liên kết vòng",
+          "content": "Để xóa phần tử cuối trong danh sách liên kết vòng, tìm phần tử ngay trước phần tử cuối, sau đó xóa phần tử ngay sau phần tử này rồi cho liên kết của nó đến phần tử đầu.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_73",
+          "order": 23,
+          "type": "text",
+          "title": "Thuật toán xóa phần tử cuối danh sách liên kết vòng",
+          "content": "Thuật toán xóa phần tử cuối danh sách liên kết vòng. Input: Danh sách cần xóa. Output: Danh sách sau khi xóa. Action: Nếu danh sách rỗng thì dừng. Nếu danh sách có 1 phần tử thì: thu hồi ô nhớ đầu; gán phần tử đầu là null. Ngược lại: tìm phần tử plast ngay trước phần tử cuối danh sách; gán phần tử ngay sau plast cho biến q; cho plast liên kết đến phần tử đầu; thu hồi ô nhớ q.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_74",
+          "order": 24,
+          "type": "code",
+          "title": "Cài đặt xóa phần tử cuối danh sách liên kết vòng",
+          "content": "void deleteLast(SLLNode* &head)\n{\n    if (head == nullptr) return;\n    if (head->next == head)\n    {\n        delete head;\n        head = nullptr;\n    }\n    else\n    {\n        SLLNode *plast = head;\n        while (plast->next->next != head) plast = plast->next;\n        SLLNode *q = plast->next;\n        plast->next = head;\n        delete q;\n    }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_75",
+          "order": 25,
+          "type": "text",
+          "title": "Độ phức tạp thao tác xóa phần tử cuối danh sách liên kết vòng",
+          "content": "Độ phức tạp thao tác xóa phần tử cuối danh sách liên kết vòng là O(n), với n là số phần tử của danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_76",
+          "order": 26,
+          "type": "text",
+          "title": "Tổ chức danh sách liên kết vòng với phần tử đặc biệt",
+          "content": "Trong một số trường hợp ta có thể tổ chức danh sách liên kết vòng tốt hơn bằng cách dùng một phần tử đặc biệt để đánh dấu phần tử đầu tiên. Với cách tổ chức này danh sách liên kết vòng luôn khác rỗng vì luôn có phần tử đặc biệt.",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        },
+        {
+          "id": "CONT_02_02_77",
+          "order": 27,
+          "type": "image",
+          "title": "Danh sách liên kết vòng với phần tử đặc biệt",
+          "content": "Hình minh họa danh sách liên kết vòng với phần tử đặc biệt.",
+          "file": "images/hinh 2-26.png",
+          "source": "Bài giảng Chương 2 - mục 2.2.2"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_02_05",
+      "title": "Danh sách hai liên kết",
+      "order": 5,
+      "contents": [
+        {
+          "id": "CONT_02_02_78",
+          "order": 1,
+          "type": "text",
+          "title": "Danh sách hai liên kết",
+          "content": "Khi làm việc với những danh sách mà việc thao tác trên một phần tử của nó liên quan đến cả phần tử ngay trước và ngay sau nó thì việc tổ chức danh sách bằng liên kết đơn thì không đáp ứng được. Trong các trường hợp như vậy mỗi phần tử của danh sách thường được dùng hai liên kết đến phần tử ngay trước và ngay sau nó, danh sách như vậy gọi là danh sách 2 liên kết.",
+          "source": "Bài giảng Chương 2 - mục 2.2.3"
+        },
+        {
+          "id": "CONT_02_02_79",
+          "order": 2,
+          "type": "image",
+          "title": "Danh sách hai liên kết",
+          "content": "Hình ảnh danh sách hai liên kết.",
+          "file": "images/hinh 2-27.png",
+          "source": "Bài giảng Chương 2 - mục 2.2.3"
+        },
+        {
+          "id": "CONT_02_02_80",
+          "order": 3,
+          "type": "text",
+          "title": "Khai báo danh sách hai liên kết",
+          "content": "Khai báo danh sách 2 liên kết:",
+          "source": "Bài giảng Chương 2 - mục 2.2.3"
+        },
+        {
+          "id": "CONT_02_02_81",
+          "order": 4,
+          "type": "code",
+          "title": "Cài đặt khai báo danh sách hai liên kết",
+          "content": "struct DLLNode\n{\n    ElementType data;\n    DLLNode *prev, *next;\n};",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.3"
+        },
+        {
+          "id": "CONT_02_02_82",
+          "order": 5,
+          "type": "text",
+          "title": "Thao tác trên danh sách hai liên kết",
+          "content": "Các thao tác trên danh sách 2 liên kết cơ bản tương tự danh sách liên kết đơn. Trong phần này giới thiệu một số thao tác đặc trưng của danh sách 2 liên kết mà danh sách liên kết đơn không thực hiện được. Các thao tác thêm sau phần tử p, xóa sau phần tử p, tìm một phần tử, sắp xếp danh sách xem như bài luyện tập.",
+          "source": "Bài giảng Chương 2 - mục 2.2.3"
+        },
+        {
+          "id": "CONT_02_02_83",
+          "order": 6,
+          "type": "text",
+          "title": "Thêm một phần tử vào trước phần tử ở vị trí p",
+          "content": "Thêm một phần tử vào trước phần tử ở vị trí p trong danh sách hai liên kết.",
+          "source": "Bài giảng Chương 2 - mục 2.2.3"
+        },
+        {
+          "id": "CONT_02_02_84",
+          "order": 7,
+          "type": "image",
+          "title": "Thêm một phần tử vào trước phần tử ở vị trí p",
+          "content": "Hình minh họa thao tác thêm một phần tử vào trước phần tử ở vị trí p trong danh sách hai liên kết.",
+          "file": "images/hinh 2-28.png",
+          "source": "Bài giảng Chương 2 - mục 2.2.3"
+        },
+        {
+          "id": "CONT_02_02_85",
+          "order": 8,
+          "type": "text",
+          "title": "Thuật toán thêm một phần tử trước phần tử p",
+          "content": "Thuật toán thêm một phần tử trước phần tử p trong danh sách hai liên kết. Input: Danh sách cần thêm, phần tử cần thêm x, vị trí thêm p. Output: Danh sách sau khi thêm. Action: Tạo phần tử q kiểu danh sách hai liên kết. Đưa x vào dữ liệu của q. Nếu danh sách rỗng thì: cho q liên kết trước, liên kết sau rỗng; gán q cho phần tử đầu. Ngược lại: Nếu p là phần tử đầu thì: cho q liên kết trước đến rỗng; cho q liên kết sau đến p; cho p liên kết trước đến q; gán q cho phần tử đầu. Ngược lại: gọi p1 là phần tử ngay trước p; cho q liên kết trước đến p1; cho p1 liên kết sau đến q; cho q liên kết sau đến p; cho p liên kết trước đến q.",
+          "source": "Bài giảng Chương 2 - mục 2.2.3"
+        },
+        {
+          "id": "CONT_02_02_86",
+          "order": 9,
+          "type": "code",
+          "title": "Cài đặt thêm một phần tử trước phần tử p",
+          "content": "void insertBefore(DLLNode* &head, DLLNode *p, ElementType x)\n{\n    DLLNode *q,*p1;\n    q = new DLLNode;\n    q->data = x;\n    //danh sách rỗng\n    if (head == nullptr)\n    {\n        q->prev = nullptr;\n        q->next = nullptr;\n        head = q;\n    }\n    else\n    {\n        if (head == p) //thêm vào đầu\n        {\n            q->prev = nullptr;\n            q->next = p;\n            p->prev = q;\n            head = q;\n        }\n        else\n        {\n            p1 = p->prev;\n            q->prev = p1;\n            p1->next = q;\n            q->next = p;\n            p->prev = q;\n        }\n    }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.3"
+        },
+        {
+          "id": "CONT_02_02_87",
+          "order": 10,
+          "type": "text",
+          "title": "Độ phức tạp thao tác thêm phần tử trước phần tử p",
+          "content": "Độ phức tạp thuật toán thêm một phần tử trước phần tử p là O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.2.3"
+        },
+        {
+          "id": "CONT_02_02_88",
+          "order": 11,
+          "type": "text",
+          "title": "Xóa phần tử tại vị trí p",
+          "content": "Xóa phần tử tại vị trí p trong danh sách hai liên kết.",
+          "source": "Bài giảng Chương 2 - mục 2.2.3"
+        },
+        {
+          "id": "CONT_02_02_89",
+          "order": 12,
+          "type": "image",
+          "title": "Xóa phần tử tại vị trí p trong danh sách hai liên kết",
+          "content": "Hình minh họa thao tác xóa phần tử tại vị trí p trong danh sách hai liên kết.",
+          "file": "images/hinh 2-29.png",
+          "source": "Bài giảng Chương 2 - mục 2.2.3"
+        },
+        {
+          "id": "CONT_02_02_90",
+          "order": 13,
+          "type": "text",
+          "title": "Thuật toán xóa phần tử p",
+          "content": "Thuật toán xóa phần tử p trong danh sách 2 liên kết. Input: Danh sách cần xóa, vị trí cần xóa p. Output: Danh sách sau khi xóa. Action: Nếu p là phần tử đầu: cho phần tử đầu chuyển ra phần tử ngay sau. Nếu phần tử đầu khác rỗng thì: gán liên kết trước của phần tử đầu rỗng. Ngược lại: gán liên kết sau của phần tử trước p là phần tử sau p. Nếu phần tử sau p khác rỗng thì: gán liên kết trước của phần tử sau p là phần tử trước p. Thu hồi ô nhớ p.",
+          "source": "Bài giảng Chương 2 - mục 2.2.3"
+        },
+        {
+          "id": "CONT_02_02_91",
+          "order": 14,
+          "type": "code",
+          "title": "Cài đặt xóa phần tử tại vị trí p",
+          "content": "void delete(DLLNode* &head, DLLLNode *p)\n{\n    if (head == p) // xóa phần tử đầu\n    {\n        head = p->next;\n        if (head != nullptr)\n            head->prev = nullptr;\n    }\n    else\n    {\n        p->prev->next = p->next;\n        if (p->next != nullptr)\n            p->next->prev = p->prev;\n    }\n    delete p;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.3"
+        },
+        {
+          "id": "CONT_02_02_92",
+          "order": 15,
+          "type": "text",
+          "title": "Độ phức tạp thao tác xóa phần tử tại vị trí p",
+          "content": "Độ phức tạp thuật toán xóa phần tử tại vị trí p trong danh sách 2 liên kết là O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.2.3"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_02_06",
+      "title": "Lớp std::list trong C++",
+      "order": 6,
+      "contents": [
+        {
+          "id": "CONT_02_02_93",
+          "order": 1,
+          "type": "text",
+          "title": "Lớp std::list trong C++",
+          "content": "Trong C++ định nghĩa lớp list trong không gian tên std dùng để thao tác với danh sách. Tương tự như lớp vector, lớp list là lớp mẫu, cho phép thao tác với các danh sách có kiểu phần tử tùy ý. Lớp list được cài đặt bằng cấu trúc danh sách hai liên kết nên các ô nhớ không liên tục, không truy xuất trực tiếp đến từng phần tử nhưng thao tác thêm, xóa được thực hiện nhanh. Có thể tham khảo cách cài đặt lớp list trong [2] (trang 91102\\).",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_94",
+          "order": 2,
+          "type": "text",
+          "title": "Sử dụng lớp list",
+          "content": "Lớp list được định nghĩa trong không gian tên std nên khi sử dụng cần khai báo không gian tên std hoặc kèm theo std:: trước tên lớp.",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_95",
+          "order": 3,
+          "type": "code",
+          "title": "Nạp header và khai báo biến list",
+          "content": "#include <list>\n\nstd::list<DataType> variable;",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_96",
+          "order": 4,
+          "type": "text",
+          "title": "Khai báo biến list",
+          "content": "Trong đó: DataType là kiểu phần tử trong danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_97",
+          "order": 5,
+          "type": "code",
+          "title": "Ví dụ khai báo list",
+          "content": "std::list<int> listOfInt;\nstd::list<Student> listOfStudents;",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_98",
+          "order": 6,
+          "type": "text",
+          "title": "Khởi tạo list",
+          "content": "Có thể khởi tạo list như một mảng các phần tử.",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_99",
+          "order": 7,
+          "type": "code",
+          "title": "Ví dụ khởi tạo list",
+          "content": "std::list<int> listOfInt = {1, 5, 2, 4, 8, 3};",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_100",
+          "order": 8,
+          "type": "text",
+          "title": "Một số phương thức",
+          "content": "Phương thức: size() - Số phần tử trong list - O(1); empty() - Cho biết list có rỗng không - O(1); clear() - Xóa các phần tử trong list - O(1); push_back(e) - Thêm một phần tử e vào cuối list - O(1); push_front(e) - Thêm một phần tử e vào đầu list - O(1); insert(pos, e) - Thêm một phần tử e vào vị trí pos (iterator) - O(1); pop_back() - Xóa phần tử cuối cùng của list - O(1); pop_front() - Xóa phần tử đầu tiên của list - O(1); erase(pos) - Xóa phần tử tại vị trí pos trong list - O(1); begin() - Trả về iterator đến phần tử đầu tiên trong list - O(1); end() - Trả về iterator đến phần tử sau phần tử cuối cùng trong list - O(1); sort() - Sắp xếp các phần tử theo thứ tự tăng - O(nlogn).",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_101",
+          "order": 9,
+          "type": "text",
+          "title": "Iterator",
+          "content": "Trong đó iterator là một đối tượng dùng để duyệt các phần tử trong một tập hợp (collection). Trong C++ có thể xem iterator như một con trỏ trỏ đến một phần tử trong collection. iterator được định nghĩa trong các lớp collection của C++ như vector, list, set,...",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_102",
+          "order": 10,
+          "type": "text",
+          "title": "Ví dụ minh họa sử dụng list",
+          "content": "Chương trình sau minh họa sử dụng list các số nguyên.",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_103",
+          "order": 11,
+          "type": "code",
+          "title": "Chương trình sử dụng list các số nguyên",
+          "content": "#include <list>\n#include <iostream>\n\nint main()\n{\n    std::list<int> myList{1, 2, 3};\n\n    // Iterating through the list using forward iterators\n    std::cout << \"Forward iteration:\\n\";\n    std::list<int>::iterator it;\n\n    for (it = myList.begin(); it != myList.end(); it++)\n        std::cout << *it << ' ';\n    std::cout << '\\n';\n\n    // Iterating through the list using reverse iterators\n    std::cout << \"Reverse iteration:\\n\";\n    std::list<int>::reverse_iterator rit;\n\n    for (rit = myList.rbegin(); rit != myList.rend(); it++)\n        std::cout << *rit << ' ';\n    std::cout << '\\n';\n\n    return 0;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_104",
+          "order": 12,
+          "type": "text",
+          "title": "Chương trình minh họa thao tác sắp xếp trên list",
+          "content": "Chương trình sau minh họa thao tác sắp xếp trên list.",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_105",
+          "order": 13,
+          "type": "code",
+          "title": "Sắp xếp list theo thứ tự tăng",
+          "content": "#include <iostream>\n#include <list>\n#include <algorithm>\n\nint main()\n{\n    std::list<int> myList = {5, 1, 4, 2, 3};\n\n    std::cout << \"Before sorting: \";\n    for (int element : myList)\n    {\n        std::cout << element << \" \";\n    }\n\n    std::cout << std::endl;\n\n    myList.sort();\n\n    std::cout << \"After sorting: \";\n    for (int element : myList)\n    {\n        std::cout << element << \" \";\n    }\n\n    std::cout << std::endl;\n\n    return 0;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_106",
+          "order": 14,
+          "type": "text",
+          "title": "Kết quả chạy chương trình sắp xếp tăng",
+          "content": "Before sorting: 5 1 4 2 3\nAfter sorting: 1 2 3 4 5",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_107",
+          "order": 15,
+          "type": "text",
+          "title": "Sắp xếp list theo thứ tự giảm",
+          "content": "Ngầm định phương thức sort() trong list là sắp theo thứ tự tăng, để sắp theo thứ tự giảm hoặc sắp theo một thứ tự do người dùng quy định, có thể thực hiện thông qua hàm định nghĩa thứ tự so sánh. Chương trình sau minh họa sắp xếp list theo thứ tự giảm:",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_108",
+          "order": 16,
+          "type": "code",
+          "title": "Sắp xếp list theo thứ tự giảm",
+          "content": "#include <iostream>\n#include <list>\n#include <algorithm>\n\nbool compareDescending(int a, int b) {\n    return a > b;\n}\n\nint main()\n{\n    std::list<int> myList = {5, 1, 4, 2, 3};\n\n    std::cout << \"Before sorting: \";\n    for (int element : myList)\n    {\n        std::cout << element << \" \";\n    }\n\n    std::cout << std::endl;\n\n    myList.sort(compareDescending);\n\n    std::cout << \"After sorting: \";\n    for (int element : myList)\n    {\n        std::cout << element << \" \";\n    }\n\n    std::cout << std::endl;\n\n    return 0;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        },
+        {
+          "id": "CONT_02_02_109",
+          "order": 17,
+          "type": "text",
+          "title": "Kết quả chạy chương trình sắp xếp giảm",
+          "content": "Before sorting: 5 1 4 2 3\nAfter sorting: 1 2 3 4 5",
+          "source": "Bài giảng Chương 2 - mục 2.2.4"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_03_01",
+      "title": "Ngăn xếp",
+      "order": 1,
+      "contents": [
+        {
+          "id": "CONT_02_03_110",
+          "order": 1,
+          "type": "text",
+          "title": "Ngăn xếp",
+          "content": "Ngăn xếp (Stack) là một danh sách giới hạn ở hai thao tác thêm 1 phần tử vào cuối danh sách và lấy ra phần tử cuối danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.3"
+        },
+        {
+          "id": "CONT_02_03_111",
+          "order": 2,
+          "type": "text",
+          "title": "Nguyên tắc hoạt động của ngăn xếp",
+          "content": "Các phần tử trong ngăn xếp thực hiện theo nguyên tắc vào sau ra trước (Last In First Out) nên còn gọi là danh sách LIFO.",
+          "source": "Bài giảng Chương 2 - mục 2.3"
+        },
+        {
+          "id": "CONT_02_03_112",
+          "order": 3,
+          "type": "image",
+          "title": "Hình ảnh ngăn xếp",
+          "file": "images/hinh 2-30.png",
+          "source": "Bài giảng Chương 2 - mục 2.3"
+        },
+        {
+          "id": "CONT_02_03_113",
+          "order": 4,
+          "type": "text",
+          "title": "Ứng dụng của ngăn xếp",
+          "content": "Ngăn xếp là cấu trúc dữ liệu có nhiều ứng dụng trong thực tế và lập trình:",
+          "source": "Bài giảng Chương 2 - mục 2.3"
+        },
+        {
+          "id": "CONT_02_03_114",
+          "order": 5,
+          "type": "text",
+          "title": "Ngăn xếp trong chồng sách",
+          "content": "Các cuốn sách được xếp thành chồng là hình ảnh của ngăn xếp. Khi xếp một cuốn sách vào chồng sách phải xếp lên trên cùng (tương ứng thao tác thêm vào cuối danh sách hay thêm vào ngăn xếp). Khi lấy một cuốn sách ra phải lấy cuốn trên cùng ra trước (tương ứng với thao tác lấy phần tử cuối danh sách hay lấy ra từ ngăn xếp).",
+          "source": "Bài giảng Chương 2 - mục 2.3"
+        },
+        {
+          "id": "CONT_02_03_115",
+          "order": 6,
+          "type": "image",
+          "title": "Hình ảnh chồng sách",
+          "file": "images/hinh 2-32.png",
+          "source": "Bài giảng Chương 2 - mục 2.3"
+        },
+        {
+          "id": "CONT_02_03_116",
+          "order": 7,
+          "type": "text",
+          "title": "Ngăn xếp trong quản lý bộ nhớ",
+          "content": "Bộ nhớ cấp cho các biến cố định trong một chương trình được quản lý theo kiểu ngăn xếp. Mỗi khi có một hàm được gọi thực hiện thì các biến của hàm đó được cấp phát ô nhớ ở đỉnh của vùng nhớ stack dành cho các biến cố định trong chương trình. Các hàm gọi sau sẽ được cấp phát vùng nhớ ở đỉnh của ngăn xếp. Khi một hàm thực hiện xong thì các ô nhớ cấp phát cho hàm đó được lấy ra khỏi vùng nhớ stack.",
+          "source": "Bài giảng Chương 2 - mục 2.3"
+        },
+        {
+          "id": "CONT_02_03_117",
+          "order": 8,
+          "type": "image",
+          "title": "Hình ảnh vùng nhớ stack",
+          "file": "images/hinh 2-32.png",
+          "source": "Bài giảng Chương 2 - mục 2.3"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_03_02",
+      "title": "Tổ chức dữ liệu và thao tác",
+      "order": 2,
+      "contents": [
+        {
+          "id": "CONT_02_03_118",
+          "order": 1,
+          "type": "text",
+          "title": "Tổ chức dữ liệu và thao tác",
+          "content": "Do ngăn xếp là danh sách nên tổ chức dữ liệu cho ngăn xếp cơ bản có hai cách:",
+          "source": "Bài giảng Chương 2 - mục 2.3.1"
+        },
+        {
+          "id": "CONT_02_03_119",
+          "order": 2,
+          "type": "text",
+          "title": "Dùng mảng",
+          "content": "Dùng mảng",
+          "source": "Bài giảng Chương 2 - mục 2.3.1"
+        },
+        {
+          "id": "CONT_02_03_120",
+          "order": 3,
+          "type": "text",
+          "title": "Dùng danh sách liên kết",
+          "content": "Dùng danh sách liên kết",
+          "source": "Bài giảng Chương 2 - mục 2.3.1"
+        },
+        {
+          "id": "CONT_02_03_121",
+          "order": 4,
+          "type": "text",
+          "title": "Tổ chức ngăn xếp bằng mảng",
+          "content": "Sử dụng một mảng để lưu các phần tử của ngăn xếp. Thêm một trường kiểu số nguyên top để lưu vị trí đỉnh ngăn xếp.",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_122",
+          "order": 5,
+          "type": "text",
+          "title": "Khai báo tổ chức dữ liệu",
+          "content": "Khai báo tổ chức dữ liệu:",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_123",
+          "order": 6,
+          "type": "code",
+          "title": "Khai báo ngăn xếp bằng mảng",
+          "content": "struct Stack{\n    ElementType arr[MAX];\n    int top;\n};",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_124",
+          "order": 7,
+          "type": "image",
+          "title": "Ngăn xếp tổ chức bằng mảng",
+          "file": "images/hinh 2-33.png",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_125",
+          "order": 8,
+          "type": "text",
+          "title": "Các thao tác trên ngăn xếp",
+          "content": "Các thao tác:",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_126",
+          "order": 9,
+          "type": "text",
+          "title": "Khởi tạo ngăn xếp",
+          "content": "Khởi tạo ngăn xếp: gán đỉnh ngăn xếp bằng -1.",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_127",
+          "order": 10,
+          "type": "text",
+          "title": "Kiểm tra ngăn xếp rỗng",
+          "content": "Kiểm tra ngăn xếp rỗng:",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_128",
+          "order": 11,
+          "type": "code",
+          "title": "Kiểm tra ngăn xếp rỗng",
+          "content": "boolean empty(Stack s)\n{\n    return s.top == -1;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_129",
+          "order": 12,
+          "type": "text",
+          "title": "Thêm một phần tử vào ngăn xếp",
+          "content": "Thêm một phần tử vào ngăn xếp:\nPhần tử thêm vào được thêm ở cuối mảng, đỉnh ngăn xếp (top) tăng lên 1.",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_130",
+          "order": 13,
+          "type": "code",
+          "title": "Thao tác push",
+          "content": "void push(Stack &s, ElementType x)\n{\n    if(s.top < MAX)\n    {\n        s.arr[++s.top] = x;\n    }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_131",
+          "order": 14,
+          "type": "image",
+          "title": "Thêm vào ngăn xếp tổ chức bằng mảng",
+          "file": "images/hinh 2-34.png",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_132",
+          "order": 15,
+          "type": "text",
+          "title": "Độ phức tạp thao tác thêm",
+          "content": "Độ phức tạp thao tác thêm vào ngăn xếp tổ chức bằng mảng là O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_134",
+          "order": 16,
+          "type": "text",
+          "title": "Lấy một phần tử ra khỏi ngăn xếp",
+          "content": "Lấy một phần tử ra khỏi ngăn xếp:",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_135",
+          "order": 17,
+          "type": "image",
+          "title": "Lấy một phần tử ra khỏi ngăn xếp tổ chức bằng mảng",
+          "file": "images/hinh 2-35.png",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_136",
+          "order": 18,
+          "type": "text",
+          "title": "Thao tác lấy phần tử ra khỏi ngăn xếp",
+          "content": "Nếu ngăn xếp không rỗng thì phần tử ở đỉnh ngăn xếp được lấy ra. Sau đó top giảm 1.",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_137",
+          "order": 19,
+          "type": "code",
+          "title": "Thao tác pop",
+          "content": "ElementType pop(Stack &s)\n{\n    if(! empty(s))\n    {\n        ElementType x = s.arr[s.top];\n        s.top--;\n        return x;\n    }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_138",
+          "order": 20,
+          "type": "text",
+          "title": "Độ phức tạp thao tác lấy ra",
+          "content": "Độ phức tạp của thao tác lấy ra một phần tử khỏi ngăn xếp tổ chức bằng mảng là O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.1"
+        },
+        {
+          "id": "CONT_02_03_139",
+          "order": 21,
+          "type": "text",
+          "title": "Tổ chức ngăn xếp bằng danh sách liên kết đơn",
+          "content": "Cách tổ chức danh sách liên kết đơn để lưu ngăn xếp vẫn như danh sách liên kết đơn lưu danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_140",
+          "order": 22,
+          "type": "text",
+          "title": "Thứ tự lưu các phần tử của ngăn xếp",
+          "content": "Các phần tử của ngăn xếp được lưu vào danh sách liên kết đơn theo thứ tự ngược.\n\nVí dụ: cho ngăn xếp s = (a0, a1, …, an)\n\nDanh sách liên kết đơn lưu ngăn xếp có dạng:",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_141",
+          "order": 23,
+          "type": "image",
+          "title": "Ngăn xếp tổ chức bằng danh sách liên kết đơn",
+          "file": "images/hinh 2-36.png",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_142",
+          "order": 24,
+          "type": "text",
+          "title": "Lý do lưu ngược thứ tự",
+          "content": "Sở dĩ phải lưu ngăn xếp vào danh sách liên kết đơn theo thứ tự phần tử đầu (a0) lưu ở cuối danh sách liên kết đơn, …, phần tử cuối (an) lưu ở đầu danh sách liên kết đơn là vì trên danh sách liên kết đơn thao tác thêm vào, lấy ra ở đầu dễ hơn ở cuối. Trong khi đó ngăn xếp thêm vào, lấy ra đều thực hiện ở cuối. Qua đây ta thấy rằng cấu trúc dữ liệu ngoài việc tổ chức bộ nhớ để lưu trữ các phần tử mà còn cách lưu các phần tử trong bộ nhớ như thế nào để thao tác cho hiệu quả.",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_143",
+          "order": 25,
+          "type": "text",
+          "title": "Khai báo",
+          "content": "Khai báo:",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_144",
+          "order": 26,
+          "type": "code",
+          "title": "Khai báo ngăn xếp bằng danh sách liên kết đơn",
+          "content": "struct Node {\n    ElementType data;\n    Node *next;\n};\n\nstruct Stack {\n    Node *top;\n};",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_145",
+          "order": 27,
+          "type": "text",
+          "title": "Kiểm tra ngăn xếp rỗng",
+          "content": "Ngăn xếp rỗng khi con trỏ phần tử đầu danh sách liên kết là rỗng.",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_146",
+          "order": 28,
+          "type": "code",
+          "title": "Kiểm tra ngăn xếp rỗng",
+          "content": "bool empty(Stack s)\n{\n    return (s.top == nullptr);\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_147",
+          "order": 29,
+          "type": "text",
+          "title": "Thao tác thêm một phần tử vào ngăn xếp",
+          "content": "Thêm phần tử x vào ngăn xếp là thêm một nút chứa x vào đầu danh sách liên kết đơn.",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_148",
+          "order": 30,
+          "type": "image",
+          "title": "Thêm một phần tử vào ngăn xếp tổ chức bằng danh sách liên kết đơn",
+          "file": "images/hinh 2-37.png",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_149",
+          "order": 31,
+          "type": "code",
+          "title": "Thao tác push",
+          "content": "void push(Stack &s, ElementType x)\n{\n    Node *newNode;\n    newNode = new Node;\n    newNode->data = x;\n    newNode->next = s.top;\n    s.top = newNode;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_150",
+          "order": 32,
+          "type": "text",
+          "title": "Độ phức tạp thao tác thêm",
+          "content": "Độ phức tạp thuật toán thêm một phần tử vào ngăn xếp tổ chức bằng danh sách liên kết đơn là O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_151",
+          "order": 33,
+          "type": "text",
+          "title": "Thao tác lấy một phần tử ra khỏi ngăn xếp",
+          "content": "Thao tác lấy một phần tử ra khỏi ngăn xếp:",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_152",
+          "order": 34,
+          "type": "image",
+          "title": "Lấy một phần tử ra khỏi ngăn xếp tổ chức bằng danh sách liên kết đơn",
+          "file": "images/hinh 2-38.png",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_153",
+          "order": 35,
+          "type": "text",
+          "title": "Cách lấy phần tử ra khỏi ngăn xếp",
+          "content": "Thực hiện lấy phần tử đang lưu ở đầu danh sách liên kết đơn, sau đó xóa phần tử đầu danh sách liên kết đơn.",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_154",
+          "order": 36,
+          "type": "code",
+          "title": "Thao tác pop",
+          "content": "ElementType pop(Stack &s)\n{\n    if (!empty(s))\n    {\n        Node *q;\n        ElementType x;\n        q = s.top;\n        x = q->data;\n        s.top = q->next;\n        delete q;\n        return x;\n    }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        },
+        {
+          "id": "CONT_02_03_155",
+          "order": 37,
+          "type": "text",
+          "title": "Độ phức tạp thao tác lấy ra",
+          "content": "Độ phức tạp thao tác lấy một phần tử ra khỏi ngăn xếp tổ chức bằng danh sách liên kết đơn là O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.3.1.2"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_03_03",
+      "title": "Ứng dụng của ngăn xếp vào tính giá trị biểu thức",
+      "order": 3,
+      "contents": [
+        {
+          "id": "CONT_02_03_156",
+          "order": 1,
+          "type": "text",
+          "title": "Ứng dụng của ngăn xếp vào tính giá trị biểu thức",
+          "content": "Việc tính giá trị biểu thức trên máy tính khó khăn vì trong biểu thức viết dưới dạng trung tố có các dấu ngoặc để quy định thứ tự biểu thức con nào được tính trước. Để đơn giản, thuật toán tính giá trị biểu thức thực hiện hai bước:\n\nBước 1: Chuyển biểu thức trung tố thành biểu thức hậu tố tương đương.\n\nBước 2: Tính giá trị của biểu thức hậu tố.",
+          "source": "Bài giảng Chương 2 - mục 2.3.2"
+        },
+        {
+          "id": "CONT_02_03_157",
+          "order": 2,
+          "type": "text",
+          "title": "Ví dụ biểu thức trung tố và hậu tố",
+          "content": "Ví dụ biểu thức: 3 * (5+2) – 7 + 1 tương đương với 3 5 2 + * 7 – 1 +.",
+          "source": "Bài giảng Chương 2 - mục 2.3.2"
+        },
+        {
+          "id": "CONT_02_03_158",
+          "order": 3,
+          "type": "text",
+          "title": "Ưu điểm của biểu thức hậu tố",
+          "content": "Sở dĩ biểu thức hậu tố dễ tính vì trong biểu thức hậu tố không cần dùng dấu ngoặc nhưng vẫn thể hiện được thứ tự thực hiện các phép toán từ trái sang phải.",
+          "source": "Bài giảng Chương 2 - mục 2.3.2"
+        },
+        {
+          "id": "CONT_02_03_159",
+          "order": 4,
+          "type": "text",
+          "title": "Thuật toán chuyển biểu thức trung tố thành biểu thức hậu tố tương đương",
+          "content": "Thuật toán chuyển biểu thức trung tố thành biểu thức hậu tố tương đương.\n\nInput: Biểu thức trung tố cần chuyển\n\nOutput: Biểu thức hậu tố tương đương biểu thức trung tố đầu vào\n\nSử dụng một ngăn xếp để lưu các thành phần của biểu thức khi chuyển đổi.",
+          "source": "Bài giảng Chương 2 - mục 2.3.2"
+        },
+        {
+          "id": "CONT_02_03_160",
+          "order": 5,
+          "type": "text",
+          "title": "Action chuyển biểu thức trung tố thành biểu thức hậu tố",
+          "content": "Action:\n\nKhởi tạo ngăn xếp rỗng, biểu thức hậu tố rỗng.\n\nDuyệt lần lượt từng thành phần của biểu thức trung tố:\n\n- Nếu là toán hạng thì đưa vào sau biểu thức hậu tố.\n- Nếu là dấu ngoặc mở thì đưa vào ngăn xếp.\n- Nếu là dấu ngoặc đóng thì lấy lần lượt các phần tử ở đỉnh ngăn xếp đưa vào sau biểu thức hậu tố cho đến khi gặp dấu ngoặc mở.\n- Nếu là phép toán:\n  - Lấy lần lượt các phép toán ở đỉnh ngăn xếp có độ ưu tiên cao hơn hoặc bằng phép toán đang xét (nếu có) đưa vào sau biểu thức hậu tố.\n  - Đưa phép toán đang xét vào ngăn xếp.\n\nLấy lần lượt từng phần tử trong ngăn xếp đưa vào sau biểu thức hậu tố.",
+          "source": "Bài giảng Chương 2 - mục 2.3.2"
+        },
+        {
+          "id": "CONT_02_03_161",
+          "order": 6,
+          "type": "text",
+          "title": "Ví dụ chuyển biểu thức trung tố thành biểu thức hậu tố",
+          "content": "Ví dụ chuyển biểu thức 5 + (7 – 2)*3 – 8/2 + 1 thành biểu thức hậu tố tương đương.",
+          "source": "Bài giảng Chương 2 - mục 2.3.2"
+        },
+        {
+          "id": "CONT_02_03_162",
+          "order": 7,
+          "type": "text",
+          "title": "Bảng chuyển biểu thức trung tố thành hậu tố",
+          "content": "Bảng chuyển biểu thức 5 + (7 – 2)*3 – 8/2 + 1 thành biểu thức hậu tố tương đương:\n\n| Thành phần | Ngăn xếp | Biểu thức hậu tố |\n| 5 | | 5 |\n| + | + | 5 |\n| ( | + ( | 5 |\n| 7 | + ( | 5 7 |\n| - | + ( - | 5 7 |\n| 2 | + ( - | 5 7 2 |\n| ) | + | 5 7 2 - |\n| * | + * | 5 7 2 - |\n| 3 | + * | 5 7 2 - 3 |\n| - | - | 5 7 2 - 3 * + |\n| 8 | - | 5 7 2 - 3 * + 8 |\n| / | - / | 5 7 2 - 3 * + 8 |\n| 2 | - / | 5 7 2 - 3 * + 8 2 |\n| + | + | 5 7 2 - 3 * + 8 2 / - |\n| 1 | + | 5 7 2 - 3 * + 8 2 / - 1 |\n| | | 5 7 2 - 3 * + 8 2 / - 1 + |",
+          "source": "Bài giảng Chương 2 - mục 2.3.2"
+        },
+        {
+          "id": "CONT_02_03_163",
+          "order": 8,
+          "type": "text",
+          "title": "Thuật toán tính giá trị biểu thức hậu tố",
+          "content": "Thuật toán tính giá trị biểu thức hậu tố.\n\nInput: Biểu thức trung tố cần tính\n\nOutput: Giá trị của biểu thức\n\nSử dụng một ngăn xếp để lưu các giá trị trung gian trong khi tính toán.",
+          "source": "Bài giảng Chương 2 - mục 2.3.2"
+        },
+        {
+          "id": "CONT_02_03_164",
+          "order": 9,
+          "type": "text",
+          "title": "Action tính giá trị biểu thức hậu tố",
+          "content": "Action:\n\nKhởi tạo ngăn xếp rỗng.\n\nDuyệt lần lượt từng thành phần của biểu thức hậu tố.\n\n- Nếu là toán hạng thì đưa vào ngăn xếp.\n- Nếu là phép toán thì:\n  - Lấy lần lượt 2 phần tử ở đỉnh ngăn xếp thực hiện phép toán (phần tử lấy ra trước đặt ở bên phải phép toán, phần tử lấy ra sau đặt ở bên trái phép toán).\n  - Đưa kết quả vào ngăn xếp.\n\nGiá trị duy nhất còn lại trong ngăn xếp chính là giá trị của biểu thức hậu tố.",
+          "source": "Bài giảng Chương 2 - mục 2.3.2"
+        },
+        {
+          "id": "CONT_02_03_165",
+          "order": 10,
+          "type": "text",
+          "title": "Ví dụ tính giá trị biểu thức hậu tố",
+          "content": "Ví dụ: tính giá trị biểu thức hậu tố: 5 7 2 – 3 * + 8 2 / - 1 +",
+          "source": "Bài giảng Chương 2 - mục 2.3.2"
+        },
+        {
+          "id": "CONT_02_03_166",
+          "order": 11,
+          "type": "text",
+          "title": "Bảng tính giá trị biểu thức hậu tố",
+          "content": "Bảng tính giá trị biểu thức hậu tố: 5 7 2 – 3 * + 8 2 / - 1 +\n\n| Thành phần | Ngăn xếp |\n| 5 | 5 |\n| 7 | 5 7 |\n| 2 | 5 7 2 |\n| - | 5 5 |\n| 3 | 5 5 3 |\n| * | 5 15 |\n| + | 20 |\n| 8 | 20 8 |\n| 2 | 20 8 2 |\n| / | 20 4 |\n| - | 16 |\n| 1 | 16 1 |\n| + | 17 |",
+          "source": "Bài giảng Chương 2 - mục 2.3.2"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_03_04",
+      "title": "Lớp std::stack trong C++",
+      "order": 4,
+      "contents": [
+        {
+          "id": "CONT_02_03_167",
+          "order": 1,
+          "type": "text",
+          "title": "Lớp std::stack trong C++",
+          "content": "Trong C++ cung cấp lớp stack trong không gian tên std dùng để thao tác với cấu trúc dữ liệu ngăn xếp.",
+          "source": "Bài giảng Chương 2 - mục 2.3.3"
+        },
+        {
+          "id": "CONT_02_03_168",
+          "order": 2,
+          "type": "text",
+          "title": "Sử dụng lớp stack",
+          "content": "Lớp stack được định nghĩa trong không gian tên std nên khi sử dụng cần khai báo không gian tên std hoặc kèm theo trước tên lớp.",
+          "source": "Bài giảng Chương 2 - mục 2.3.3"
+        },
+        {
+          "id": "CONT_02_03_169",
+          "order": 3,
+          "type": "text",
+          "title": "Nạp header và khai báo biến stack",
+          "content": "Nạp header <stack>: #include <stack>\n\nKhai báo biến stack:\n\nstd::stack<DataType> variable;\n\nTrong đó: DataType là kiểu phần tử trong ngăn xếp.",
+          "source": "Bài giảng Chương 2 - mục 2.3.3"
+        },
+        {
+          "id": "CONT_02_03_170",
+          "order": 4,
+          "type": "code",
+          "title": "Khai báo stack",
+          "content": "std::stack<int> stackOfInt;\nstd::stack<Node*> stackOfNodePtr;",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.3.3"
+        },
+        {
+          "id": "CONT_02_03_171",
+          "order": 5,
+          "type": "text",
+          "title": "Một số phương thức của lớp stack",
+          "content": "| Phương thức | Chức năng | Độ phức tạp |\n| size() | Số phần tử trong stack | O(1) |\n| empty() | Cho biết stack có rỗng không | O(1) |\n| swap(s) | Đổi các phần tử của stack với stack s | O(n) |\n| push(e) | Thêm phần tử e vào đỉnh stack | O(1) |\n| pop() | Xóa một phần tử ở đỉnh stack | O(1) |\n| top() | Trả về phần tử ở đỉnh stack | O(1) |",
+          "source": "Bài giảng Chương 2 - mục 2.3.3"
+        },
+        {
+          "id": "CONT_02_03_172",
+          "order": 6,
+          "type": "text",
+          "title": "Chương trình minh họa lớp stack",
+          "content": "Chương trình sau minh họa đơn giản với một ngăn xếp các số nguyên với các thao tác thêm vào và lấy ra để in lên màn hình.",
+          "source": "Bài giảng Chương 2 - mục 2.3.3"
+        },
+        {
+          "id": "CONT_02_03_173",
+          "order": 7,
+          "type": "code",
+          "title": "Chương trình minh họa ngăn xếp số nguyên",
+          "content": "#include <iostream>\n#include <stack>\n\nint main()\n{\n    std::stack<int> myStack;\n\n    myStack.push(5);\n    myStack.push(1);\n    myStack.push(4);\n    myStack.push(2);\n    myStack.push(3);\n\n    std::cout << \"Elements of the stack: \";\n    while (!myStack.empty())\n    {\n        std::cout << myStack.top() << \" \";\n        myStack.pop();\n    }\n\n    std::cout << std::endl;\n\n    return 0;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.3.3"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_04_01",
+      "title": "Hàng đợi",
+      "order": 1,
+      "contents": [
+        {
+          "id": "CONT_02_04_174",
+          "order": 1,
+          "type": "text",
+          "title": "Hàng đợi",
+          "content": "Hàng đợi (queue) là một danh sách giới hạn trên hai thao tác: thêm một phần tử vào cuối và lấy ra phần tử đầu. Nguyên tắc thao tác với hàng đợi là phần tử đưa vào trước được lấy ra trước nên còn gọi là danh sách FIFO (First In First Out).",
+          "source": "Bài giảng Chương 2 - mục 2.4"
+        },
+        {
+          "id": "CONT_02_04_175",
+          "order": 2,
+          "type": "image",
+          "title": "Hình ảnh hàng đợi",
+          "file": "images/hinh 2-39.png",
+          "source": "Bài giảng Chương 2 - mục 2.4"
+        },
+        {
+          "id": "CONT_02_04_176",
+          "order": 3,
+          "type": "text",
+          "title": "Ứng dụng của hàng đợi",
+          "content": "Hàng đợi có nhiều ứng dụng trong thực tế: xếp hàng mua vé tàu/xe, khám chữa bệnh,... Trong máy tính sử dụng nhiều cấu trúc hàng đợi như hàng đợi máy in, hàng đợi bàn phím,...",
+          "source": "Bài giảng Chương 2 - mục 2.4"
+        },
+        {
+          "id": "CONT_02_04_177",
+          "order": 4,
+          "type": "image",
+          "title": "Xếp hàng mua vé",
+          "file": "images/hinh 2-40.png",
+          "source": "Bài giảng Chương 2 - mục 2.4"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_04_02",
+      "title": "Tổ chức dữ liệu và thao tác",
+      "order": 2,
+      "contents": [
+        {
+          "id": "CONT_02_04_178",
+          "order": 1,
+          "type": "text",
+          "title": "Tổ chức hàng đợi bằng mảng",
+          "content": "Sử dụng một mảng lưu các phần tử của hàng đợi. Dùng hai trường số nguyên lưu vị trí đầu và cuối hàng đợi.",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_179",
+          "order": 2,
+          "type": "text",
+          "title": "Biểu diễn hàng đợi bằng mảng",
+          "content": "Hàng đợi q = (am, am+1, ..., an) được lưu trong mảng như hình dưới.",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_180",
+          "order": 3,
+          "type": "image",
+          "title": "Hàng đợi tổ chức bằng mảng",
+          "file": "images/hinh 2-41.png",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_181",
+          "order": 4,
+          "type": "text",
+          "title": "Khai báo",
+          "content": "Khai báo:",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_182",
+          "order": 5,
+          "type": "code",
+          "title": "Khai báo cấu trúc Queue",
+          "content": "struct Queue{  ElementType arr[MAX];  int front, rear; };",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_183",
+          "order": 6,
+          "type": "text",
+          "title": "Khởi tạo hàng đợi",
+          "content": "Khi mới khởi tạo hàng đợi chưa có phần tử. Gán front là 0 và rear là -1.",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_184",
+          "order": 7,
+          "type": "code",
+          "title": "Khởi tạo hàng đợi",
+          "content": "void initialize(Queue &q)\n{\n q.front = 0;\n q.rear = -1;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_185",
+          "order": 8,
+          "type": "text",
+          "title": "Kiểm tra hàng đợi rỗng",
+          "content": "Hàng đợi rỗng khi rear bằng -1.",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_186",
+          "order": 9,
+          "type": "code",
+          "title": "Kiểm tra hàng đợi rỗng",
+          "content": "boolean empty(Queue q)\n{\n return q.rear == -1;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_187",
+          "order": 10,
+          "type": "text",
+          "title": "Thêm một phần tử vào hàng đợi",
+          "content": "Phần tử thêm vào sẽ ở vị trí ngay sau vị trí cuối cùng của hàng đợi.",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_188",
+          "order": 11,
+          "type": "code",
+          "title": "Thêm một phần tử vào hàng đợi",
+          "content": "void add(Queue &q, ElementType x)\n{\n    if (q.rear < MAX)\n    {\n        q.rear++;\n        q.arr[q.rear] = x;\n    }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_189",
+          "order": 12,
+          "type": "image",
+          "title": "Thêm một phần tử vào hàng đợi tổ chức bằng mảng",
+          "file": "images/hinh 2-42.png",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_190",
+          "order": 13,
+          "type": "text",
+          "title": "Độ phức tạp thao tác thêm",
+          "content": "Độ phức tạp thao tác thêm một phần tử vào hàng đợi tổ chức bằng mảng là O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_191",
+          "order": 14,
+          "type": "text",
+          "title": "Lấy một phần tử ra khỏi hàng đợi",
+          "content": "Phần tử lấy ra ở vị trí front, sau khi lấy ra front tăng lên 1.",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_192",
+          "order": 15,
+          "type": "image",
+          "title": "Lấy ra một phần tử khỏi hàng đợi tổ chức bằng mảng",
+          "file": "images/hinh 2-43.png",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_193",
+          "order": 16,
+          "type": "image",
+          "title": "Lấy ra một phần tử khỏi hàng đợi tổ chức bằng mảng",
+          "file": "images/hinh 2-44.png",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_194",
+          "order": 17,
+          "type": "code",
+          "title": "Lấy một phần tử ra khỏi hàng đợi",
+          "content": "ElementType remove(Queue &q)\n{\n if(!empty(q))\n {\n  ElementType x = q.arr[q.front];\n  q.front++;\n  return x;\n }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_195",
+          "order": 18,
+          "type": "text",
+          "title": "Độ phức tạp thao tác lấy ra",
+          "content": "Độ phức tạp của thao tác lấy ra một phần tử từ hàng đợi tổ chức bằng mảng là O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_196",
+          "order": 19,
+          "type": "text",
+          "title": "Xử lý tràn hàng đợi",
+          "content": "Tràn hàng đợi xảy ra khi phần tử cuối hàng đợi đang ở vị trí cuối mảng nhưng hàng đợi chưa đầy vì vị trí phần tử đầu trong mảng lớn hơn 0 (front > 0). Trong trường hợp hàng đợi tràn thì thuật toán trên không thể thêm được. Để khắc phục tràn hàng đợi có hai cách: dời tịnh tiến các phần tử về đầu mảng và di chuyển mảng theo vòng tròn.",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_197",
+          "order": 20,
+          "type": "text",
+          "title": "Dời tịnh tiến",
+          "content": "Khi hàng đợi tràn (rear = MAX-1) nhưng chưa đầy (front>0) thì dịch chuyển các phần tử của hảng đợi trong mảng về đầu mảng.",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_198",
+          "order": 21,
+          "type": "code",
+          "title": "Thêm vào hàng đợi bằng dời tịnh tiến",
+          "content": "void add(Queue &q, ElementType x)\n{  int i;\n if (q.rear – q.front + 1 < MAX)\n {\n  if (q.rear == MAX-1) //dời tịnh tiến\n  { //dời các phần tử hàng đợi lên q.front vị trí\n    for (i = q.front; i<= q.rear; i++)\n      q.arr[i-q.front] = q.arr[i];\n    q.rear = q.rear – q.front;\n    q.front = 0;   }\n  else\n  {\n   q.rear++;\n   q.arr[q.rear] = x;\n  }\n }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_199",
+          "order": 22,
+          "type": "text",
+          "title": "Độ phức tạp dời tịnh tiến",
+          "content": "Độ phức tạp thao tác thêm một phần tử vào hàng đợi tổ chức bằng mảng khắc phục tràn hàng đợi bằng dời tịnh tiến trong trường hợp xấu nhất là O(n).",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_200",
+          "order": 23,
+          "type": "text",
+          "title": "Di chuyển vòng",
+          "content": "Một cách khắc phục tốt hơn là di chuyển vòng.",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_201",
+          "order": 24,
+          "type": "text",
+          "title": "Cách thực hiện di chuyển vòng",
+          "content": "Thay vì di chuyển các phần tử để khắc phục tràn có thể xem mảng như một vòng tròn, khi thêm phần tử vào hàng đợi mà hàng đợi tràn nhưng chưa đầy thì thêm vào vị trí đầu mảng. Tương tự khi lấy ra khỏi hàng đợi. Khi thực hiện di chuyển vòng có thể front > rear.",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_202",
+          "order": 25,
+          "type": "image",
+          "title": "Khắc phục tràn hàng đợi bằng di chuyển vòng (Nguồn: Internet)",
+          "file": "images/hinh 2-45.png",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_203",
+          "order": 26,
+          "type": "text",
+          "title": "Thêm vào hàng đợi, xử lý tràn bằng di chuyển vòng",
+          "content": "Thêm vào hàng đợi, xử lý tràn bằng di chuyển vòng:",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_204",
+          "order": 27,
+          "type": "code",
+          "title": "Thêm vào hàng đợi bằng di chuyển vòng",
+          "content": "void add (Queue &q, ElementType x)\n{\n if (q.front!=q.rear+1 && q.rear - q.front < MAX)\n {\n  if (q.rear == MAX-1)\n   q.rear = 0;\n  else\n   q.rear++;\n  q.arr[q.rear] = x;\n }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_205",
+          "order": 28,
+          "type": "text",
+          "title": "Độ phức tạp thêm bằng di chuyển vòng",
+          "content": "Độ phức tạp của thao tác thêm một phần tử vào hàng đợi, khắc phục tràn hàng đợi bằng di chuyển vòng là O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_206",
+          "order": 29,
+          "type": "text",
+          "title": "Lấy ra một phần tử của hàng đợi bằng di chuyển vòng",
+          "content": "Lấy ra một phần tử của hàng đợi, xử lý tràn bằng di chuyển vòng:",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_207",
+          "order": 30,
+          "type": "code",
+          "title": "Lấy ra một phần tử bằng di chuyển vòng",
+          "content": "ElementType remove(Queue &q)\n{\n ElementType x;\n if (!empty(q))\n {\n  x = q.arr[q.front];\n  if (q.front == q.rear) //hàng đợi còn 1 phần tử\n  {\n   q.front = 0;\n   q.rear = -1;\n  }\n  else\n   if (q.front == MAX-1)\n   q.front = 0;\n  else\n   q.front++;\n  return x;\n }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_208",
+          "order": 31,
+          "type": "text",
+          "title": "Độ phức tạp lấy ra bằng di chuyển vòng",
+          "content": "Độ phức tạp của thao tác lấy ra một phần tử từ hàng đợi, khắc phục tràn hàng đợi bằng di chuyển vòng là O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.1"
+        },
+        {
+          "id": "CONT_02_04_209",
+          "order": 32,
+          "type": "text",
+          "title": "Tổ chức hàng đợi bằng danh sách liên kết đơn",
+          "content": "Do hàng đợi thực hiện thêm vào ở cuối và lấy ra ở đầu nên khi dùng danh sách liên kết đơn để tổ chức dữ liệu cho hàng đợi phải quản lý được phần tử đầu và cuối danh sách liên kết đơn.",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        },
+        {
+          "id": "CONT_02_04_210",
+          "order": 33,
+          "type": "text",
+          "title": "Hình ảnh tổ chức dữ liệu cho hàng đợi",
+          "content": "Hình ảnh tổ chức dữ liệu cho hàng đợi bằng danh sách liên kết đơn minh họa như hình dưới.",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        },
+        {
+          "id": "CONT_02_04_211",
+          "order": 34,
+          "type": "image",
+          "title": "Hàng đợi tổ chức bằng danh sách liên kết đơn",
+          "file": "images/hinh 2-46.png",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        },
+        {
+          "id": "CONT_02_04_212",
+          "order": 35,
+          "type": "text",
+          "title": "Khai báo",
+          "content": "Khai báo:",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        },
+        {
+          "id": "CONT_02_04_213",
+          "order": 36,
+          "type": "code",
+          "title": "Khai báo cấu trúc hàng đợi",
+          "content": "struct Node{\n    ElementType data;\n    Node* next;\n};\n\nstruct Queue{\n    Node *front, *rear;\n};",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        },
+        {
+          "id": "CONT_02_04_214",
+          "order": 37,
+          "type": "text",
+          "title": "Thêm một phần tử vào hàng đợi",
+          "content": "Thêm vào sau phần tử rear trong danh sách liên kết đơn rồi chuyển rear ra phần tử vừa thêm.",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        },
+        {
+          "id": "CONT_02_04_215",
+          "order": 38,
+          "type": "image",
+          "title": "Thêm một phần tử vào hàng đợi tổ chức bằng danh sách liên kết đơn",
+          "file": "images/hinh 2-47.png",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        },
+        {
+          "id": "CONT_02_04_216",
+          "order": 39,
+          "type": "code",
+          "title": "Thêm một phần tử vào hàng đợi tổ chức bằng danh sách liên kết đơn",
+          "content": "void add(Queue &q, ElementType x)\n{\n    Node *newNode;\n    newNode = new Node;\n    newNode->data = x;\n    newNode->next = nullptr;\n    if (q.front == nullptr) //hàng đợi rỗng\n    {\n        q.front = q.rear = newNode;\n    }\n    else\n    {\n        q.rear->next = newNode;\n        q.rear = newNode;\n    }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        },
+        {
+          "id": "CONT_02_04_217",
+          "order": 40,
+          "type": "text",
+          "title": "Độ phức tạp thao tác thêm",
+          "content": "Độ phức tạp thao tác thêm một phần tử vào hàng đợi tổ chức bằng danh sách liên kết đơn là O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        },
+        {
+          "id": "CONT_02_04_218",
+          "order": 41,
+          "type": "text",
+          "title": "Lấy một phần tử ra khỏi hàng đợi",
+          "content": "Lấy một phần tử ra khỏi hàng đợi:",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        },
+        {
+          "id": "CONT_02_04_219",
+          "order": 42,
+          "type": "text",
+          "title": "Lấy một phần tử ra khỏi hàng đợi",
+          "content": "Phần tử đầu danh sách liên kết đơn được lấy ra, sau đó xóa phần tử này. Trường hợp hàng đợi chỉ còn có 1 phần tử thì sau khi lấy ra hàng đợi rỗng (front và rear gán bằng null).",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        },
+        {
+          "id": "CONT_02_04_220",
+          "order": 43,
+          "type": "text",
+          "title": "Độ phức tạp thao tác lấy ra",
+          "content": "Độ phức tạp thao tác lấy ra một phần tử từ hàng đợi tổ chức bằng danh sách liên kết đơn là O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_04_03",
+      "title": "Lớp std::queue trong C++",
+      "order": 3,
+      "contents": [
+        {
+          "id": "CONT_02_05_221",
+          "order": 1,
+          "type": "code",
+          "title": "Lấy một phần tử ra khỏi hàng đợi tổ chức bằng danh sách liên kết đơn",
+          "content": "ElementType remove(Queue &q)\n{\n  Node *p;\n  ElementType x;\n  if (q.front != nullptr)\n  {\n    p = q.front;\n    x = p->data;\n    if (q.front == q.rear) //hàng đợi còn 1 phần tử\n    {\n      q.front = q.rear = nullptr;\n    }\n    else\n      q.front = p->next;\n    delete p;\n    return x;\n  }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        },
+        {
+          "id": "CONT_02_05_222",
+          "order": 2,
+          "type": "image",
+          "title": "Lấy một phần tử ra khỏi hàng đợi tổ chức bằng danh sách liên kết đơn",
+          "file": "images/hinh 2-48.png",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        },
+        {
+          "id": "CONT_02_05_223",
+          "order": 3,
+          "type": "text",
+          "title": "Thao tác lấy một phần tử ra khỏi hàng đợi",
+          "content": "Phần tử đầu danh sách liên kết đơn được lấy ra, sau đó xóa phần tử này. Trường hợp hàng đợi chỉ còn có 1 phần tử thì sau khi lấy ra hàng đợi rỗng (front và rear gán bằng null).",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        },
+        {
+          "id": "CONT_02_05_224",
+          "order": 4,
+          "type": "text",
+          "title": "Độ phức tạp thao tác lấy ra",
+          "content": "Độ phức tạp thao tác lấy ra một phần tử từ hàng đợi tổ chức bằng danh sách liên kết đơn là O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.4.1.2"
+        },
+        {
+          "id": "CONT_02_05_225",
+          "order": 5,
+          "type": "text",
+          "title": "Lớp std::queue trong C++",
+          "content": "Trong C++ cung cấp lớp queue trong không gian tên std dùng để thao tác với cấu trúc dữ liệu ngăn xếp.",
+          "source": "Bài giảng Chương 2 - mục 2.5"
+        },
+        {
+          "id": "CONT_02_05_226",
+          "order": 6,
+          "type": "text",
+          "title": "Sử dụng lớp queue",
+          "content": "Lớp stack được định nghĩa trong không gian tên std nên khi sử dụng cần khai báo không gian tên std hoặc kèm theo trước tên lớp.\n\nNạp header <queue>: #include <queue>\nKhai báo biến queue:\nstd::queue<DataType> variable;\nTrong đó: DataType là kiểu phần tử trong hàng đợi.",
+          "source": "Bài giảng Chương 2 - mục 2.5"
+        },
+        {
+          "id": "CONT_02_05_227",
+          "order": 7,
+          "type": "code",
+          "title": "Ví dụ khai báo queue",
+          "content": "std::queue<int> queueOfInt;\nstd::queue<Node*> queueOfNodePtr;",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.5"
+        },
+        {
+          "id": "CONT_02_05_228",
+          "order": 8,
+          "type": "text",
+          "title": "Một số phương thức của lớp queue",
+          "content": "Phương thức | Chức năng | Độ phức tạp\nsize() | Số phần tử trong queue | O(1)\nempty() | Cho biết queue có rỗng không | O(1)\npush(e) | Thêm phần tử e vào cuối queue | O(1)\npop() | Xóa một phần tử ở đầu queue | O(1)\nfront() | Trả về phần tử đầu queue | O(1)\nback() | Trả về phần tử cuối queue | O(1)",
+          "source": "Bài giảng Chương 2 - mục 2.5"
+        },
+        {
+          "id": "CONT_02_05_229",
+          "order": 9,
+          "type": "text",
+          "title": "Chương trình minh họa lớp queue",
+          "content": "Chương trình sau minh họa đơn giản với một hàng đợi các số nguyên với các thao tác thêm vào và lấy ra để in lên màn hình.",
+          "source": "Bài giảng Chương 2 - mục 2.5"
+        },
+        {
+          "id": "CONT_02_05_230",
+          "order": 10,
+          "type": "code",
+          "title": "Chương trình minh họa hàng đợi số nguyên",
+          "content": "#include <iostream>\n#include <queue>\n\nint main()\n{\n    std::queue<int> myQueue;\n\n    myQueue.push(5);\n    myQueue.push(1);\n    myQueue.push(4);\n\n    while (!myQueue.empty())\n    {\n        std::cout << myQueue.front() << \" \";\n        myQueue.pop();\n    }\n\n    return 0;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.5"
+        }
+      ]
+    }
+  ]
+}
