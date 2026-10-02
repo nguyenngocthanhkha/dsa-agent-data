@@ -1,0 +1,36 @@
+{
+  "chapter": {
+    "id": "CH02"
+  },
+  "lesson": {
+    "id": "LES_02_01",
+    "title": "Mảng",
+    "order": 1
+  },
+  "exercises": [
+    {
+      "id": "EX_02_01_01",
+      "order": 1,
+      "title": "Bài 2.1",
+      "type": "programming",
+      "content": "Trình bày thuật toán và cài đặt các thao tác sau trên danh sách sinh viên tổ chức bằng mảng:\na) Đếm số sinh viên có dtb>=x (x là tham số).\nb) Xóa một sinh viên có họ tên x.\nc) Tạo 1 danh sách mới chứa những sinh viên có dtb>=8.0.\nd) Thêm 1 sinh viên x vào danh sách đã sắp thứ tự giảm của dtb.\ne) Chèn một danh sách sinh viên l2 vào danh sách sinh viên l1 tại vị trí k.\nf) Ghép 2 danh sách sinh viên đã sắp theo thứ tự giảm của dtb thành một danh sách mới được sắp theo thứ tự giảm của điểm trung bình.\ng) Thống kê số lượng sinh viên theo tuổi trong danh sách sinh viên l.",
+      "answer": ""
+    },
+    {
+      "id": "EX_02_01_02",
+      "order": 2,
+      "title": "Bài 2.2",
+      "type": "programming",
+      "content": "Cho hai mảng số nguyên a có m phần tử, b có n phần tử. Hãy trình bày thuật toán và viết các hàm:\na) isSubArr(a, b): trả về kết quả true nếu b là một đoạn con của mảng a và false trong trường hợp ngược lại.\nb) isSubSequence(a, b): trả về kết quả true nếu b là dãy con của a và false trong trường hợp ngược lại.\nVí dụ: a = (1, 5, 2, 1, 3, 7, 2), b = (5, 1, 2), c = (1, 2, 5, 3), d = (2, 1, 3) thì b là dãy con của a, c không phải là dãy con của a, d là đoạn con của a.",
+      "answer": ""
+    },
+    {
+      "id": "EX_02_01_03",
+      "order": 3,
+      "title": "Bài 2.3",
+      "type": "programming",
+      "content": "Sử dụng mảng hai chiều để lưu điểm m môn học của n học sinh. Viết các hàm thực hiện:\na) Tính trung bình cộng điểm của từng học sinh\nb) Tìm điểm cao nhất của từng môn học\nc) Sắp xếp danh sách học sinh theo thứ tự giảm của điểm trung bình cộng",
+      "answer": ""
+    }
+  ]
+}

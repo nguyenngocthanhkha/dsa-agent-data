@@ -1,0 +1,1683 @@
+{
+  "chapter": {
+    "id": "CH02",
+    "title": "Cấu trúc dữ liệu tuyến tính",
+    "order": 2
+  },
+  "lesson": {
+    "id": "LES_02_01",
+    "title": "Mảng",
+    "order": 1,
+    "description": "Mảng là một cấu trúc dữ liệu cơ bản được sử dụng nhiều trong lập trình. Mảng được dùng khi thao tác với nhiều phần tử cùng kiểu dữ liệu như dãy các số, danh sách học sinh, nhiệt độ trung bình các ngày trong năm,…\n\nTrong các ngôn ngữ lập trình mảng là kiểu dữ liệu có cấu trúc được định nghĩa sẵn. Các ô nhớ của một mảng được thao tác với cùng một tên biến kiểu mảng và phân biệt nhau qua chỉ số."
+  },
+  "sections": [
+    {
+      "id": "SEC_02_01_01",
+      "title": "2.1.1 Giới thiệu cấu trúc mảng",
+      "order": 1,
+      "contents": [
+        {
+          "id": "CONT_02_01_03",
+          "order": 1,
+          "type": "text",
+          "title": "Tổ chức bộ nhớ của mảng",
+          "content": "Một biến mảng là một dãy các ô nhớ liên tiếp nhau trong bộ nhớ máy tính, mỗi ô nhớ có kích thước bằng kích thước kiểu dữ liệu của một phần tử.",
+          "source": "Bài giảng Chương 2 - mục 2.1.1.1"
+        },
+        {
+          "id": "CONT_02_01_04",
+          "order": 2,
+          "type": "code",
+          "title": "Khai báo biến mảng marks",
+          "content": "int marks[10];",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.1.1"
+        },
+        {
+          "id": "CONT_02_01_05",
+          "order": 3,
+          "type": "image",
+          "title": "Hình ảnh bộ nhớ một mảng có 10 phần tử",
+          "content": "Hình 2-1 - Hình ảnh bộ nhớ một mảng có 10 phần tử",
+          "file": "images/hinh2_1.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.1.1"
+        },
+        {
+          "id": "CONT_02_01_06",
+          "order": 4,
+          "type": "text",
+          "title": "Thao tác với các phần tử của mảng",
+          "content": "Thao tác với từng phần tử của mảng thông qua tên biến mảng và chỉ số của ô nhớ. Trong ngôn ngữ lập trình C++, chỉ số của mảng bắt đầu từ 0.",
+          "source": "Bài giảng Chương 2 - mục 2.1.1.2"
+        },
+        {
+          "id": "CONT_02_01_07",
+          "order": 5,
+          "type": "code",
+          "title": "Gán giá trị cho mảng",
+          "content": "int i, marks[10];\nfor(i = 0; i < 1; i++)\n    marks[i] = -1;",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.1.2"
+        },
+        {
+          "id": "CONT_02_01_08",
+          "order": 6,
+          "type": "image",
+          "title": "Mảng marks sau khi gán bằng mã lệnh 2.1",
+          "content": "Hình 2-2 - Mảng marks sau khi gán bằng Mã lệnh 2.1",
+          "file": "images/hinh2_2.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.1.2"
+        },
+        {
+          "id": "CONT_02_01_09",
+          "order": 7,
+          "type": "text",
+          "title": "Địa chỉ các ô nhớ trong mảng",
+          "content": "Do các ô nhớ của mảng liên tiếp nhau và kích thước mỗi ô là bằng nhau nên từ địa chỉ của ô nhớ đầu tiên xác định được địa chỉ của các ô nhớ theo vị trí của nó. Địa chỉ của ô nhớ A[k] = BA(A) + w(k − lower_bound). A là biến mảng, k là chỉ số của phần tử trong mảng, BA(A) là địa chỉ cơ sở của mảng A (địa chỉ của ô đầu tiên), w là kích thước một phần tử, lower_bound là chỉ số phần tử đầu tiên của mảng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.1.3"
+        },
+        {
+          "id": "CONT_02_01_10",
+          "order": 8,
+          "type": "code",
+          "title": "Khai báo mảng marks",
+          "content": "marks[]={99,67,78,56,88,90,34,85};",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.1.3"
+        },
+        {
+          "id": "CONT_02_01_11",
+          "order": 9,
+          "type": "text",
+          "title": "Ví dụ tính địa chỉ của marks[4]",
+          "content": "Tính địa chỉ của marks[4] nếu địa chỉ cơ sở là 1000. Giả sử kích thước của kiểu số nguyên là 2 bytes. Địa chỉ của marks[4] = 1000 + 2(4 − 0) = 1008.",
+          "source": "Bài giảng Chương 2 - mục 2.1.1.3"
+        },
+        {
+          "id": "CONT_02_01_12",
+          "order": 10,
+          "type": "image",
+          "title": "Địa chỉ các ô nhớ trong mảng marks",
+          "content": "Hình 2-3 - Địa chỉ các ô nhớ trong mảng marks",
+          "file": "images/hinh2_3.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.1.3"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_01_02",
+      "title": "2.1.2 Các thao tác trên mảng",
+      "order": 2,
+      "contents": [
+        {
+          "id": "CONT_02_01_13",
+          "order": 1,
+          "type": "text",
+          "title": "Duyệt mảng",
+          "content": "Để duyệt qua các phần tử của mảng chỉ cần duyệt qua chỉ số các phần tử của mảng từ chỉ số đầu tiên đến chỉ số cuối cùng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.1"
+        },
+        {
+          "id": "CONT_02_01_14",
+          "order": 2,
+          "type": "algorithm",
+          "title": "Thuật toán duyệt mảng Arr",
+          "format": "markdown",
+          "content": "### Thuật toán: duyệt mảng Arr\n\n1. `index = lower_bound`\n2. Lặp khi `index <= upper_bound`\n3. Thao tác với phần tử `Arr[index]`\n4. `index = index + 1`",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.1"
+        },
+        {
+          "id": "CONT_02_01_15",
+          "order": 3,
+          "type": "code",
+          "title": "Chương trình in các phần tử trong mảng",
+          "content": "for(int i = 0; i < n; i++)\n    cout << arr[i];",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.1"
+        },
+        {
+          "id": "CONT_02_01_16",
+          "order": 4,
+          "type": "text",
+          "title": "Chèn một phần tử vào mảng",
+          "content": "Để chèn một phần tử vào trong mảng tại một vị trí k nào đó cần chuyển các phần tử từ vị trí k đến hết mảng ra sau một vị trí, sau đó đưa phần tử cần chèn vào vị trí k của mảng, cuối cùng tăng số phần tử của mảng lên 1.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.2"
+        },
+        {
+          "id": "CONT_02_01_17",
+          "order": 5,
+          "type": "algorithm",
+          "title": "Thuật toán chèn một phần tử vào mảng tại vị trí xác định",
+          "format": "markdown",
+          "content": "### Thuật toán: Chèn một phần tử vào mảng tại vị trí xác định\n\n**Input:** Mảng A có n phần tử, phần tử cần chèn e, vị trí chèn k.\n\n**Output:** Mảng A sau khi chèn.\n\n**Action:**\n1. Lặp `i` từ `n - 1` giảm đến `k`.\n2. Gán `A[i + 1] = A[i]`.\n3. Gán `A[k] = e`.\n4. Tăng số phần tử của mảng: `n = n + 1`.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.2"
+        },
+        {
+          "id": "CONT_02_01_18",
+          "order": 6,
+          "type": "text",
+          "title": "Ví dụ chèn phần tử vào mảng Data",
+          "content": "Cho mảng Data[] có 6 phần tử: Data[0] = 45, Data[1] = 23, Data[2] = 34, Data[3] = 12, Data[4] = 56, Data[5] = 20.\n\nCần chèn phần tử 100 vào vị trí 3 của mảng Data.\n\nThực hiện lần lượt:\n1. Data[6] = Data[5].\n2. Data[5] = Data[4].\n3. Data[4] = Data[3].\n4. Data[3] = 100.\n\nSau khi thực hiện, phần tử 100 được chèn vào vị trí 3 và các phần tử từ vị trí 3 trở đi được dịch sang phải một vị trí.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.2"
+        },
+        {
+          "id": "CONT_02_01_19",
+          "order": 7,
+          "type": "code",
+          "title": "Cài đặt thuật toán chèn một phần tử vào mảng",
+          "content": "void insert(int A[], int &n, int e, int k)\n{\n    for(int i = n - 1; i >= k; i--)\n        A[i + 1] = A[i];\n    A[k] = e;\n    n++;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.2"
+        },
+        {
+          "id": "CONT_02_01_20",
+          "order": 8,
+          "type": "text",
+          "title": "Độ phức tạp của thuật toán chèn",
+          "content": "Độ phức tạp tính toán của thuật toán chèn là O(n) với n là số phần tử của mảng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.2"
+        },
+        {
+          "id": "CONT_02_01_21",
+          "order": 9,
+          "type": "text",
+          "title": "Xóa một phần tử tại vị trí k",
+          "content": "Để xóa một phần tử tại vị trí k trong mảng, chỉ cần dồn các phần tử từ vị trí k + 1 đến hết mảng ra trước một vị trí, sau đó giảm số phần tử của mảng đi 1.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.3"
+        },
+        {
+          "id": "CONT_02_01_22",
+          "order": 10,
+          "type": "algorithm",
+          "title": "Thuật toán xóa một phần tử tại vị trí xác định trong mảng",
+          "format": "markdown",
+          "content": "### Thuật toán: Xóa một phần tử tại vị trí xác định trong mảng\n\n**Input:** Mảng A có n phần tử, vị trí phần tử cần xóa k.\n\n**Output:** Mảng A sau khi xóa.\n\n**Action:**\n1. Lặp `i` từ `k + 1` đến `n - 1`.\n2. Gán `A[i - 1] = A[i]`.\n3. Giảm số phần tử của mảng: `n = n - 1`.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.3"
+        },
+        {
+          "id": "CONT_02_01_23",
+          "order": 11,
+          "type": "text",
+          "title": "Ví dụ xóa phần tử trong mảng Data",
+          "content": "Cho mảng Data[] có 6 phần tử: Data[0] = 45, Data[1] = 23, Data[2] = 34, Data[3] = 12, Data[4] = 56, Data[5] = 20.\n\nCần xóa phần tử ở vị trí 3 của mảng Data.\n\nCác bước thực hiện:\n1. Data[2] = Data[3].\n2. Data[3] = Data[4].\n3. Data[4] = Data[5].\n\nCuối cùng giảm số phần tử của mảng đi 1.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.3"
+        },
+        {
+          "id": "CONT_02_01_24",
+          "order": 12,
+          "type": "code",
+          "title": "Cài đặt thuật toán xóa một phần tử trong mảng",
+          "content": "void detele(int A[], int &n, int k)\n{\n    for(int i = k + 1; i < n; i++)\n        A[i - 1] = A[i];\n    n--;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.3"
+        },
+        {
+          "id": "CONT_02_01_25",
+          "order": 13,
+          "type": "text",
+          "title": "Độ phức tạp của thuật toán xóa",
+          "content": "Độ phức tạp tính toán của thuật toán xóa là O(n) với n là số phần tử của mảng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.3"
+        },
+        {
+          "id": "CONT_02_01_26",
+          "order": 14,
+          "type": "text",
+          "title": "Tìm một phần tử trong mảng",
+          "content": "Để tìm một phần tử trong mảng có hai thuật toán chính là tìm tuần tự và tìm nhị phân. Trong đó thuật toán tìm nhị phân yêu cầu mảng phải được sắp xếp.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.4"
+        },
+        {
+          "id": "CONT_02_01_27",
+          "order": 15,
+          "type": "algorithm",
+          "title": "Thuật toán tìm tuần tự",
+          "content": "Input: Mảng A có n phần tử, phần tử cần tìm e\nOutput: True nếu e có trong A, False trong trường hợp ngược lại\n\nLặp i từ 0 đến n - 1:\n    Nếu A[i] = e thì trả về True\n\nTrả về False",
+          "format": "markdown",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.4"
+        },
+        {
+          "id": "CONT_02_01_28",
+          "order": 16,
+          "type": "code",
+          "title": "Cài đặt thuật toán tìm tuần tự",
+          "content": "bool sequential_search(int A[], int n, int e)\n{\n    for (int i = 0; i < n; i++)\n        if (A[i] == e)\n            return true;\n\n    return false;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - Mã lệnh 2.4"
+        },
+        {
+          "id": "CONT_02_01_29",
+          "order": 17,
+          "type": "text",
+          "title": "Độ phức tạp của thuật toán tìm tuần tự",
+          "content": "Thuật toán tìm tuần tự có độ phức tạp tính toán là O(n), với n là số phần tử của mảng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.4"
+        },
+        {
+          "id": "CONT_02_01_30",
+          "order": 18,
+          "type": "algorithm",
+          "title": "Thuật toán tìm nhị phân",
+          "content": "Input: Mảng A có n phần tử đã được sắp tăng, phần tử cần tìm e\nOutput: True nếu e có trong A, False trong trường hợp ngược lại\n\nleft = 0, right = n - 1\n\nLặp khi left <= right:\n    m = (left + right) / 2\n\n    Nếu A[m] = e thì trả về True\n    Nếu A[m] < e thì:\n        left = m + 1\n    Ngược lại:\n        right = m - 1\n\nTrả về False",
+          "format": "markdown",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.4"
+        },
+        {
+          "id": "CONT_02_01_31",
+          "order": 19,
+          "type": "code",
+          "title": "Cài đặt thuật toán tìm nhị phân",
+          "content": "bool binary_search(int A[], int n, int e)\n{\n    int left = 0, right = n - 1, m;\n\n    while (left <= right)\n    {\n        m = (left + right) / 2;\n\n        if (A[m] == e)\n            return true;\n        else if (A[m] < e)\n            left = m + 1;\n        else\n            right = m - 1;\n    }\n\n    return false;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - Mã lệnh 2.5"
+        },
+        {
+          "id": "CONT_02_01_32",
+          "order": 20,
+          "type": "text",
+          "title": "Độ phức tạp của thuật toán tìm nhị phân",
+          "content": "Thuật toán tìm nhị phân có độ phức tạp tính toán là O(log n), với n là số phần tử của mảng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.4"
+        },
+        {
+          "id": "CONT_02_01_33",
+          "order": 21,
+          "type": "text",
+          "title": "Sắp xếp mảng",
+          "content": "Có nhiều thuật toán sắp xếp mảng, dưới đây trình bày thuật toán sắp xếp nổi bọt.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.5"
+        },
+        {
+          "id": "CONT_02_01_34",
+          "order": 22,
+          "type": "algorithm",
+          "title": "Thuật toán sắp xếp nổi bọt",
+          "format": "markdown",
+          "content": "### Thuật toán sắp xếp nổi bọt\n\n**Input:** Mảng A có n phần tử.\n\n**Output:** Mảng A sắp tăng.\n\n**Action:**\n1. Lặp `i` từ `1` đến `n - 1`.\n2. Lặp `j` từ `1` đến `n - i`.\n3. Nếu `A[j] < A[j - 1]` thì đổi hai phần tử `A[j]` và `A[j - 1]`.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.5"
+        },
+        {
+          "id": "CONT_02_01_35",
+          "order": 23,
+          "type": "code",
+          "title": "Cài đặt thuật toán sắp xếp nổi bọt",
+          "content": "void BubbleSort(int A[], int n)\n{\n    int i, j, tmp;\n    for (i = 1; i < n; i++)\n        for (j = 1; j <= n - i; j++)\n            if (A[j] < A[j - 1])\n            {\n                tmp = A[j];\n                A[j] = A[j - 1];\n                A[j - 1] = tmp;\n            }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - Mã lệnh 2.6"
+        },
+        {
+          "id": "CONT_02_01_36",
+          "order": 24,
+          "type": "text",
+          "title": "Độ phức tạp của thuật toán sắp xếp nổi bọt",
+          "content": "Độ phức tạp thuật toán sắp xếp nổi bọt là O(n²), với n là số phần tử của mảng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.5"
+        },
+        {
+          "id": "CONT_02_01_37",
+          "order": 25,
+          "type": "text",
+          "title": "Trộn hai mảng không sắp xếp",
+          "content": "Trộn hai mảng không sắp xếp ra một mảng thứ ba là chép các phần tử của mảng thứ nhất sang mảng thứ ba sau đó chép các phần tử của mảng thứ hai sang mảng thứ ba từ vị trí tiếp theo.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.6"
+        },
+        {
+          "id": "CONT_02_01_38",
+          "order": 26,
+          "type": "text",
+          "title": "Ví dụ trộn hai mảng không sắp xếp",
+          "content": "Ví dụ: hình dưới minh họa trộn hai mảng không sắp xếp vào mảng thứ ba.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.6"
+        },
+        {
+          "id": "CONT_02_01_39",
+          "order": 27,
+          "type": "image",
+          "title": "Trộn hai mảng không sắp xếp",
+          "content": "Hình 2-4 - Trộn hai mảng không sắp xếp",
+          "file": "images/hinh2_4.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.6"
+        },
+        {
+          "id": "CONT_02_01_40",
+          "order": 28,
+          "type": "text",
+          "title": "Hàm trộn hai mảng không sắp xếp",
+          "content": "Hàm trộn hai mảng không sắp xếp A có m phần tử và mảng B có n phần tử vào mảng C:",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.6"
+        },
+        {
+          "id": "CONT_02_01_41",
+          "order": 29,
+          "type": "code",
+          "title": "Cài đặt hàm trộn hai mảng không sắp xếp",
+          "content": "void merge_unsorted(int A[], int B[], int C[], int m, int n)\n{\n    int i;\n    for (i = 0; i < m; i++)\n        C[i] = A[i];\n    for (i = 0; i < n; i++)\n        C[m + i] = B[i];\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.6"
+        },
+        {
+          "id": "CONT_02_01_42",
+          "order": 30,
+          "type": "text",
+          "title": "Trộn hai mảng đã sắp xếp",
+          "content": "Trộn hai mảng sắp xếp tăng sang mảng thứ ba cũng được sắp xếp tăng sẽ tiến hành duyệt đồng thời từng phần tử của hai mảng, nếu phần tử ở mảng nào nhỏ hơn thì đưa vào mảng thứ ba rồi xét phần tử tiếp theo. Khi một mảng kết thúc thì đưa những phần tử của mảng còn lại vào mảng thứ ba từ vị trí tiếp theo.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.6"
+        },
+        {
+          "id": "CONT_02_01_43",
+          "order": 31,
+          "type": "text",
+          "title": "Ví dụ trộn hai mảng đã được sắp xếp",
+          "content": "Ví dụ: hình dưới minh họa trộn hai mảng đã được sắp theo thứ tự tăng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.6"
+        },
+        {
+          "id": "CONT_02_01_44",
+          "order": 32,
+          "type": "image",
+          "title": "Trộn hai mảng đã được sắp xếp",
+          "content": "Hình 2-5 - Trộn hai mảng đã được sắp xếp",
+          "file": "images/hinh2_5.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.6"
+        },
+        {
+          "id": "CONT_02_01_45",
+          "order": 33,
+          "type": "text",
+          "title": "Hàm trộn hai mảng sắp tăng",
+          "content": "Hàm trộn hai mảng sắp tăng vào mảng sắp tăng:",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.6"
+        },
+        {
+          "id": "CONT_02_01_46",
+          "order": 34,
+          "type": "code",
+          "title": "Cài đặt hàm trộn hai mảng đã sắp xếp",
+          "content": "void merge_unsorted(int A[], int B[], int C[], int m, int n)\n{\n    int i = 0, j = 0, k = 0;\n    while (i < m && j < n)\n    {\n        if (A[i] < B[j])\n            C[k++] = A[i++];\n        else\n            C[k++] = B[j++];\n    }\n    while (i < m)\n        C[k++] = A[i++];\n    while (j < n)\n        C[k++] = B[j++];\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.6"
+        },
+        {
+          "id": "CONT_02_01_47",
+          "order": 35,
+          "type": "text",
+          "title": "Độ phức tạp của thuật toán trộn hai mảng",
+          "content": "Thuật toán trộn hai mảng theo thứ tự là O(m+n), với m, n là số phần tử của hai mảng cần trộn.",
+          "source": "Bài giảng Chương 2 - mục 2.1.2.6"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_01_03",
+      "title": "2.1.3 Mảng và con trỏ",
+      "order": 3,
+      "contents": [
+        {
+          "id": "CONT_02_01_48",
+          "order": 1,
+          "type": "text",
+          "title": "Mối quan hệ giữa mảng và con trỏ",
+          "content": "Do các ô nhớ của mảng liên tiếp nhau và kích thước từng ô nhớ bằng nhau nên nếu biết địa chỉ ô nhớ đầu tiên của mảng sẽ xác định được các ô nhớ còn lại theo chỉ số. Ví dụ: mảng arr được khai báo int arr[] = {1, 2, 3, 4, 5}; hình ảnh bộ nhớ như hình dưới [1].",
+          "source": "Bài giảng Chương 2 - mục 2.1.3"
+        },
+        {
+          "id": "CONT_02_01_49",
+          "order": 2,
+          "type": "image",
+          "title": "Địa chỉ bộ nhớ của biến mảng arr",
+          "content": "Hình 2-6 - Địa chỉ bộ nhớ của biến mảng arr",
+          "file": "images/hinh2_6.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.3"
+        },
+        {
+          "id": "CONT_02_01_50",
+          "order": 3,
+          "type": "text",
+          "title": "Biến mảng là hằng con trỏ",
+          "content": "Trong C++ biến mảng là hằng con trỏ chứa địa chỉ của ô nhớ đầu tiên, còn gọi là địa chỉ cơ sở. Do đó có thể dùng biến con trỏ để thao tác với các ô nhớ của mảng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.3"
+        },
+        {
+          "id": "CONT_02_01_51",
+          "order": 4,
+          "type": "code",
+          "title": "Khai báo và gán địa chỉ cho biến con trỏ ptr",
+          "content": "int *ptr;\nptr = &arr[0];",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.3"
+        },
+        {
+          "id": "CONT_02_01_52",
+          "order": 5,
+          "type": "text",
+          "title": "Con trỏ ptr và các ô nhớ của mảng",
+          "content": "Khi đó biến ptr lưu địa chỉ ô nhớ đầu tiên của mảng. Có thể dùng biến ptr để thao tác với các ô nhớ của mảng arr. Chẳng hạn *ptr chính là giá trị của arr[0]. Có thể dùng biến ptr gán địa chỉ ô nhớ khác của mảng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.3"
+        },
+        {
+          "id": "CONT_02_01_53",
+          "order": 6,
+          "type": "code",
+          "title": "Gán con trỏ ptr đến phần tử arr[2]",
+          "content": "ptr = &arr[2];",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.3"
+        },
+        {
+          "id": "CONT_02_01_54",
+          "order": 7,
+          "type": "image",
+          "title": "Con trỏ trỏ đến ô nhớ của mảng",
+          "content": "Hình 2-7 - Con trỏ trỏ đến ô nhớ của mảng",
+          "file": "images/hinh2_7.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.3"
+        },
+        {
+          "id": "CONT_02_01_55",
+          "order": 8,
+          "type": "text",
+          "title": "Tăng, giảm địa chỉ biến con trỏ",
+          "content": "Có thể tăng, giảm địa chỉ biến con trỏ bằng phép toán ptr++, ptr--. Khi đó biến con trỏ sẽ tăng/giảm theo kích thước ô nhớ mà biến con trỏ trỏ đến.",
+          "source": "Bài giảng Chương 2 - mục 2.1.3"
+        },
+        {
+          "id": "CONT_02_01_56",
+          "order": 9,
+          "type": "text",
+          "title": "Ví dụ tăng địa chỉ biến con trỏ",
+          "content": "Ví dụ: biến con trỏ đang ở ô nhớ arr[2] (địa chỉ 1004), nếu thực hiện lệnh ptr++; thì nó sẽ trỏ đến ô nhớ arr[3] (địa chỉ 1006) với giả thiết kích thước dữ liệu kiểu int là 2 bytes.",
+          "source": "Bài giảng Chương 2 - mục 2.1.3"
+        },
+        {
+          "id": "CONT_02_01_57",
+          "order": 10,
+          "type": "image",
+          "title": "Biến ptr tăng địa chỉ theo kích thước ô nhớ",
+          "content": "Hình 2-8 - Biến ptr tăng địa chỉ theo kích thước ô nhớ",
+          "file": "images/hinh2_8.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.3"
+        },
+        {
+          "id": "CONT_02_01_58",
+          "order": 11,
+          "type": "text",
+          "title": "Duyệt mảng sử dụng biến con trỏ",
+          "content": "Đoạn mã sau duyệt mảng sử dụng biến con trỏ.",
+          "source": "Bài giảng Chương 2 - mục 2.1.3"
+        },
+        {
+          "id": "CONT_02_01_59",
+          "order": 12,
+          "type": "code",
+          "title": "Duyệt mảng bằng biến con trỏ",
+          "content": "for(ptr = arr; ptr - arr < 5; ptr++)\n    cout << *ptr;",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.3"
+        },
+        {
+          "id": "CONT_02_01_60",
+          "order": 13,
+          "type": "code",
+          "title": "Duyệt mảng trên biến arr",
+          "content": "for(int i = 0; i < 5; i++)\n    cout << *(arr + i);",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.3"
+        },
+        {
+          "id": "CONT_02_01_61",
+          "order": 14,
+          "type": "text",
+          "title": "Lưu ý về biến mảng",
+          "content": "Lưu ý biến mảng là hằng con trỏ nên không thể gán địa chỉ khác cho biến mảng. Chẳng hạn không thực hiện được lệnh arr = ptr; Do đó mảng trong C++ có kích thước cố định sau khi khai báo. Để sử dụng được mảng có kích thước thay đổi có thể dùng biến con trỏ để tạo ra các mảng động.",
+          "source": "Bài giảng Chương 2 - mục 2.1.3"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_01_04",
+      "title": "2.1.4 Mảng động",
+      "order": 4,
+      "contents": [
+        {
+          "id": "CONT_02_01_62",
+          "order": 1,
+          "type": "text",
+          "title": "Mảng động",
+          "content": "Do mảng trong C++ có kích thước cố định nên trong chương trình không thể thay đổi kích thước mảng. Để tạo mảng có kích thước thay đổi được, gọi là mảng động (dynamic array), có thể dùng biến con trỏ.",
+          "source": "Bài giảng Chương 2 - mục 2.1.4"
+        },
+        {
+          "id": "CONT_02_01_63",
+          "order": 2,
+          "type": "code",
+          "title": "Cấp phát một dãy ô nhớ cho biến con trỏ",
+          "content": "variable = new DataType[n];",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.4"
+        },
+        {
+          "id": "CONT_02_01_64",
+          "order": 3,
+          "type": "text",
+          "title": "Ví dụ cấp phát mảng động",
+          "content": "Ví dụ: cấp phát cho biến con trỏ ptr 5 ô nhớ.",
+          "source": "Bài giảng Chương 2 - mục 2.1.4"
+        },
+        {
+          "id": "CONT_02_01_65",
+          "order": 4,
+          "type": "code",
+          "title": "Cấp phát 5 ô nhớ cho ptr",
+          "content": "ptr = new int[5];",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.4"
+        },
+        {
+          "id": "CONT_02_01_66",
+          "order": 5,
+          "type": "image",
+          "title": "Mảng động dùng biến con trỏ ptr",
+          "content": "Hình 2-9 minh họa mảng động được tạo bởi biến con trỏ ptr.",
+          "source": "Bài giảng Chương 2 - mục 2.1.4",
+          "file": "images/hinh2_9.png"
+        },
+        {
+          "id": "CONT_02_01_67",
+          "order": 6,
+          "type": "text",
+          "title": "Thao tác với các ô nhớ của mảng động",
+          "content": "Khi đó có thể thao tác với các ô nhớ như thao tác với biến mảng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.4"
+        },
+        {
+          "id": "CONT_02_01_68",
+          "order": 7,
+          "type": "code",
+          "title": "Gán giá trị cho các phần tử của mảng động",
+          "content": "ptr[0] = 5;\nptr[1] = -3;",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.4"
+        },
+        {
+          "id": "CONT_02_01_69",
+          "order": 8,
+          "type": "text",
+          "title": "Thu hồi bộ nhớ của mảng động",
+          "content": "Khi không cần sử dụng các ô nhớ của mảng động tạo bởi biến con trỏ, có thể thu hồi.",
+          "source": "Bài giảng Chương 2 - mục 2.1.4"
+        },
+        {
+          "id": "CONT_02_01_70",
+          "order": 9,
+          "type": "code",
+          "title": "Thu hồi bộ nhớ mảng động",
+          "content": "delete [] variable;",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.4"
+        },
+        {
+          "id": "CONT_02_01_71",
+          "order": 10,
+          "type": "text",
+          "title": "Ví dụ thu hồi bộ nhớ",
+          "content": "Ví dụ: thu hồi bộ nhớ của mảng động được cấp phát cho biến con trỏ ptr.",
+          "source": "Bài giảng Chương 2 - mục 2.1.4"
+        },
+        {
+          "id": "CONT_02_01_72",
+          "order": 11,
+          "type": "code",
+          "title": "Thu hồi bộ nhớ của ptr",
+          "content": "delete [] ptr;",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.4"
+        },
+        {
+          "id": "CONT_02_01_73",
+          "order": 12,
+          "type": "text",
+          "title": "Cấp phát lại mảng động",
+          "content": "Sau đó nếu cần tiếp tục cấp phát mảng với kích thước khác cho biến con trỏ ptr.",
+          "source": "Bài giảng Chương 2 - mục 2.1.4"
+        },
+        {
+          "id": "CONT_02_01_74",
+          "order": 13,
+          "type": "code",
+          "title": "Chương trình minh họa sử dụng mảng động",
+          "content": "#include <iostream>\n#include <algorithm>\n\nint main()\n{\n    int size;\n    std::cout << \"Enter the size of the array: \";\n    std::cin >> size;\n\n    int* arr = new int[size];\n    int* ptr = arr;\n\n    // Initialize array\n    for (int i = 0; i < size; i++)\n    {\n        *ptr = i + 1;\n        ptr++;\n    }\n\n    ptr = arr;\n\n    std::cout << \"Original array: \";\n    for (int i = 0; i < size; i++)\n    {\n        std::cout << *ptr << \" \";\n        ptr++;\n    }\n\n    // Resize the array\n    int new_size;\n    std::cout << \"\\nEnter the new size of the array: \";\n    std::cin >> new_size;\n\n    int* new_arr = new int[new_size];\n\n    // Copy the elements to the new array\n    for (int i = 0; i < std::min(size, new_size); i++)\n    {\n        new_arr[i] = arr[i];\n    }\n\n    ptr = new_arr;\n\n    std::cout << \"Array after resizing: \";\n    for (int i = 0; i < new_size; i++)\n    {\n        std::cout << *ptr << \" \";\n        ptr++;\n    }\n\n    // Free the memory\n    delete[] arr;\n    delete[] new_arr;\n\n    return 0;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.4"
+        },
+        {
+          "id": "CONT_02_01_75",
+          "order": 14,
+          "type": "text",
+          "title": "Giải thích chương trình mảng động",
+          "content": "Ban đầu biến con trỏ arr được cấp phát size ô nhớ và gán các giá trị từ 1 đến size. Sau đó một con trỏ new_arr được cấp phát new_size ô nhớ và gán các giá trị từ arr sang new_arr. Như vậy có thể dùng biến con trỏ để tạo các mảng mà kích thước có thể thay đổi trong quá trình sử dụng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.4"
+        },
+        {
+          "id": "CONT_02_01_76",
+          "order": 15,
+          "type": "text",
+          "title": "Mảng trong ngôn ngữ lập trình Java",
+          "content": "Trong ngôn ngữ lập trình Java, mảng được sử dụng là mảng động. Khi khai báo biến mảng chưa cấp phát ô nhớ mà được cấp phát bằng lệnh trong chương trình.",
+          "source": "Bài giảng Chương 2 - mục 2.1.4"
+        },
+        {
+          "id": "CONT_02_01_77",
+          "order": 16,
+          "type": "code",
+          "title": "Ví dụ khai báo và sử dụng mảng trong Java",
+          "content": "int arr[]; // Khai báo biến mảng\narr = new int[5]; // Cấp phát 5 ô nhớ cho biến mảng arr\n...\narr = new int[10]; // Cấp phát 10 ô nhớ khác cho biến mảng arr",
+          "format": "java",
+          "source": "Bài giảng Chương 2 - mục 2.1.4"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_01_05",
+      "title": "2.1.5 Mảng hai chiều",
+      "order": 5,
+      "contents": [
+        {
+          "id": "CONT_02_01_78",
+          "order": 1,
+          "type": "text",
+          "title": "Mảng hai chiều",
+          "content": "Mảng hai chiều là mảng mà mỗi phần tử là một mảng. Mảng hai chiều như một bảng gồm nhiều dòng và nhiều cột, mỗi ô chứa một giá trị, tương ứng với một ô nhớ trong bộ nhớ.",
+          "source": "Bài giảng Chương 2 - mục 2.1.5"
+        },
+        {
+          "id": "CONT_02_01_79",
+          "order": 2,
+          "type": "image",
+          "title": "Hình ảnh của mảng hai chiều",
+          "content": "Hình 2-10 - Hình ảnh của mảng hai chiều",
+          "file": "images/hinh2_10.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.5"
+        },
+        {
+          "id": "CONT_02_01_80",
+          "order": 3,
+          "type": "text",
+          "title": "Khai báo mảng hai chiều",
+          "content": "Khai báo mảng hai chiều trong C++.",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_81",
+          "order": 4,
+          "type": "code",
+          "title": "Cú pháp khai báo mảng hai chiều",
+          "content": "data_type array_name[row_size][column_size];",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_82",
+          "order": 5,
+          "type": "text",
+          "title": "Ví dụ khai báo mảng hai chiều",
+          "content": "Ví dụ: khai báo biến marks là mảng hai chiều có 3 dòng, 5 cột.",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_83",
+          "order": 6,
+          "type": "code",
+          "title": "Khai báo mảng marks",
+          "content": "int marks[3][5];",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_84",
+          "order": 7,
+          "type": "image",
+          "title": "Hình ảnh mảng hai chiều marks",
+          "content": "Hình 2-11 - Hình ảnh mảng hai chiều marks",
+          "file": "images/hinh2_11.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_85",
+          "order": 8,
+          "type": "text",
+          "title": "Thao tác với các phần tử của mảng hai chiều",
+          "content": "Thao tác với các phần tử của mảng hai chiều theo cú pháp array_name[row_index][column_index].",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_86",
+          "order": 9,
+          "type": "code",
+          "title": "Truy cập các phần tử của mảng hai chiều",
+          "content": "marks[0][0] = 77;\nmarks[2][3] = 80;",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_87",
+          "order": 10,
+          "type": "text",
+          "title": "Mỗi dòng của mảng hai chiều",
+          "content": "Mỗi dòng của mảng hai chiều là một mảng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_88",
+          "order": 11,
+          "type": "image",
+          "title": "Biểu diễn mảng hai chiều marks[3][5]",
+          "content": "Hình 2-12 - Biểu diễn mảng hai chiều marks[3][5]",
+          "file": "images/hinh2_12.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_89",
+          "order": 12,
+          "type": "text",
+          "title": "Cấu trúc của mảng marks[3][5]",
+          "content": "Mảng hai chiều marks[3][5] là 3 mảng marks[0], marks[1], marks[2], mỗi mảng có 5 phần tử.",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_90",
+          "order": 13,
+          "type": "text",
+          "title": "Khởi tạo giá trị cho mảng hai chiều",
+          "content": "Có thể khởi tạo giá trị cho mảng hai chiều tương tự như mảng một chiều.",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_91",
+          "order": 14,
+          "type": "code",
+          "title": "Khởi tạo mảng hai chiều như mảng một chiều",
+          "content": "int marks[2][3] = {90, 87, 78, 68, 62, 71};",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_92",
+          "order": 15,
+          "type": "text",
+          "title": "Khởi tạo từng dòng cho mảng hai chiều",
+          "content": "Có thể khởi tạo từng dòng cho mảng hai chiều bằng cách sử dụng các nhóm dấu ngoặc nhọn tương ứng với từng dòng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_93",
+          "order": 16,
+          "type": "code",
+          "title": "Khởi tạo từng dòng của mảng hai chiều",
+          "content": "int marks[2][3] = {{90, 87, 78}, {68, 62, 71}};\n\nint marks[][3] = {{90, 87, 78}, {68, 62, 71}};",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_94",
+          "order": 17,
+          "type": "code",
+          "title": "Khởi tạo mảng hai chiều không khai báo số dòng",
+          "content": "int marks[][3] = {{90, 87, 78}, {68, 62, 71}};",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_95",
+          "order": 18,
+          "type": "text",
+          "title": "Ví dụ chương trình minh họa các thao tác trên mảng hai chiều",
+          "content": "Ví dụ: chương trình minh họa các thao tác trên mảng hai chiều.",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_96",
+          "order": 19,
+          "type": "code",
+          "title": "Chương trình minh họa thao tác trên mảng hai chiều",
+          "content": "#include <iostream>\nusing namespace std;\n\nint main()\n{\n    int marks[2][3] = {{90, 87, 78}, {68, 62, 71}};\n\n    for (int i = 0; i < 2; i++)\n    {\n        for (int j = 0; j < 3; j++)\n        {\n            cout << marks[i][j] << \" \";\n        }\n        cout << endl;\n    }\n\n    return 0;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.1"
+        },
+        {
+          "id": "CONT_02_01_97",
+          "order": 20,
+          "type": "text",
+          "title": "Tham số mảng hai chiều cho hàm",
+          "content": "Khi khai báo tham số mảng hai chiều cho hàm cần cố định số cột của mảng hai chiều.",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.2"
+        },
+        {
+          "id": "CONT_02_01_98",
+          "order": 21,
+          "type": "text",
+          "title": "Ví dụ hàm nhập mảng hai chiều",
+          "content": "Ví dụ: hàm nhập mảng hai chiều.",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.2"
+        },
+        {
+          "id": "CONT_02_01_99",
+          "order": 22,
+          "type": "code",
+          "title": "Hàm nhập mảng hai chiều",
+          "content": "void inputArray2D(int arr[][10], int num_row, int num_col) {\n for (int i = 0; i < num_row; i++) {\n for (int j = 0; j < num_col; j++) {\n std::cout << \"Element[\" << i << \"][\" << j << \"]: \";\n std::cin >> arr[i][j];\n }\n }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.2"
+        },
+        {
+          "id": "CONT_02_01_100",
+          "order": 23,
+          "type": "text",
+          "title": "Số cột của mảng hai chiều",
+          "content": "Khi truyền tham số mảng hai chiều phải có số cột trùng với số cột của tham số.",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.2"
+        },
+        {
+          "id": "CONT_02_01_101",
+          "order": 24,
+          "type": "text",
+          "title": "Ví dụ nhập mảng hai chiều",
+          "content": "Ví dụ: nhập mảng hai chiều 3 dòng 7 cột.",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.2"
+        },
+        {
+          "id": "CONT_02_01_102",
+          "order": 25,
+          "type": "code",
+          "title": "Khai báo và truyền mảng hai chiều",
+          "content": "int a[5][10];\ninputArray2D(a, 3, 7);",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.2"
+        },
+        {
+          "id": "CONT_02_01_103",
+          "order": 26,
+          "type": "text",
+          "title": "Truyền từng dòng của mảng hai chiều",
+          "content": "Có thể truyền từng dòng của mảng hai chiều như đối số cho mảng một chiều.",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.2"
+        },
+        {
+          "id": "CONT_02_01_104",
+          "order": 27,
+          "type": "text",
+          "title": "Ví dụ tính tổng từng dòng",
+          "content": "Ví dụ: để tính tổng từng dòng của mảng hai chiều, sử dụng hàm tổng mảng một chiều.",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.2"
+        },
+        {
+          "id": "CONT_02_01_105",
+          "order": 28,
+          "type": "code",
+          "title": "Hàm tính tổng mảng một chiều",
+          "content": "//sum of 1-D array\nint sumArr(int arr[], int n)\n{\n int sum = 0;\n for(int i = 0; i < n; i++)\n sum += arr[i];\n return sum;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.2"
+        },
+        {
+          "id": "CONT_02_01_106",
+          "order": 29,
+          "type": "code",
+          "title": "Tính tổng từng dòng của mảng hai chiều",
+          "content": "int a[3][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};\n\nfor(int row = 0; row < 3; row++)\n{\n int s = sumArr(a[row], 4); //sum of a row\n cout << \"sum row: \" << row << \" is: \" << s << endl;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.2"
+        },
+        {
+          "id": "CONT_02_01_107",
+          "order": 30,
+          "type": "text",
+          "title": "Chương trình minh họa mảng hai chiều",
+          "content": "Chương trình minh họa các chức năng nhập, xuất mảng hai chiều và cộng hai ma trận được lưu trong hai mảng hai chiều.",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.2"
+        },
+        {
+          "id": "CONT_02_01_108",
+          "order": 31,
+          "type": "code",
+          "title": "Chương trình nhập, xuất và cộng hai mảng hai chiều",
+          "content": "#include <iostream>\n\nconst int ROWS = 3;\nconst int COLS = 4;\n\nvoid inputArray(int arr[][COLS])\n{\n for (int i = 0; i < ROWS; i++)\n {\n for (int j = 0; j < COLS; j++)\n {\n std::cout << \"Enter element[\" << i << \"][\" << j << \"]: \";\n std::cin >> arr[i][j];\n }\n }\n}\n\nvoid outputArray(int arr[][COLS])\n{\n for (int i = 0; i < ROWS; i++)\n {\n for (int j = 0; j < COLS; j++)\n {\n std::cout << arr[i][j] << \" \";\n }\n std::cout << std::endl;\n }\n}\n\nvoid addArray(int arr1[][COLS], int arr2[][COLS], int arr3[][COLS])\n{\n for (int i = 0; i < ROWS; i++)\n {\n for (int j = 0; j < COLS; j++)\n {\n arr3[i][j] = arr1[i][j] + arr2[i][j];\n }\n }\n}\n\nint main()\n{\n // Declare three 2D arrays\n int arr1[ROWS][COLS], arr2[ROWS][COLS], arr3[ROWS][COLS];\n\n // Input elements for the first array\n std::cout << \"Enter elements for the first array: \" << std::endl;\n inputArray(arr1);\n\n // Input elements for the second array\n std::cout << \"Enter elements for the second array: \" << std::endl;\n inputArray(arr2);\n\n // Add the elements of the second array to the first array\n addArray(arr1, arr2, arr3);\n\n // Output the elements of the third array\n std::cout << \"Elements of the third array: \" << std::endl;\n outputArray(arr3);\n\n return 0;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.5.2"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_01_06",
+      "title": "2.1.6 Con trỏ và mảng hai chiều",
+      "order": 6,
+      "contents": [
+        {
+          "id": "CONT_02_01_109",
+          "order": 1,
+          "type": "text",
+          "title": "Con trỏ và mảng hai chiều",
+          "content": "Biến mảng hai chiều có thể được xem là một con trỏ trỏ đến dòng đầu tiên của mảng. Mỗi dòng của mảng hai chiều là một mảng một chiều.",
+          "source": "Bài giảng Chương 2 - mục 2.1.6"
+        },
+        {
+          "id": "CONT_02_01_200",
+          "order": 2,
+          "type": "text",
+          "title": "Ví dụ khai báo mảng hai chiều",
+          "content": "Ví dụ khai báo một mảng hai chiều mat gồm 5 dòng và 5 cột.",
+          "source": "Bài giảng Chương 2 - mục 2.1.6"
+        },
+        {
+          "id": "CONT_02_01_201",
+          "order": 3,
+          "type": "code",
+          "title": "Khai báo mảng mat",
+          "content": "int mat[5][5];",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.6"
+        },
+        {
+          "id": "CONT_02_01_202",
+          "order": 4,
+          "type": "text",
+          "title": "Ý nghĩa của mat",
+          "content": "Khi đó mat chứa địa chỉ của dòng đầu tiên trong mảng mat. Địa chỉ này liên quan đến ô nhớ đầu tiên mat[0][0], đồng thời mat[0] đại diện cho dòng đầu tiên của mảng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.6"
+        },
+        {
+          "id": "CONT_02_01_203",
+          "order": 5,
+          "type": "text",
+          "title": "Ý nghĩa của mat",
+          "content": "Khi đó mat chứa địa chỉ của dòng đầu tiên trong mảng mat. Địa chỉ này liên quan đến ô nhớ đầu tiên mat[0][0], đồng thời mat[0] đại diện cho dòng đầu tiên của mảng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.6"
+        },
+        {
+          "id": "CONT_02_01_204",
+          "order": 6,
+          "type": "text",
+          "title": "Cách truy cập phần tử bằng con trỏ",
+          "content": "Một phần tử trong mảng hai chiều có thể được truy cập bằng cách sử dụng chỉ số hoặc thông qua phép toán con trỏ.",
+          "source": "Bài giảng Chương 2 - mục 2.1.6"
+        },
+        {
+          "id": "CONT_02_01_205",
+          "order": 7,
+          "type": "code",
+          "title": "Ba cách truy cập phần tử giống nhau",
+          "content": "mat[i][j]\n*(*(mat + i) + j)\n*(mat[i] + j)",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.6"
+        },
+        {
+          "id": "CONT_02_01_206",
+          "order": 8,
+          "type": "text",
+          "title": "Khai báo con trỏ cho mảng hai chiều",
+          "content": "Muốn thao tác với mảng hai chiều thông qua con trỏ, cần khai báo con trỏ trỏ đến một dòng của mảng. Khi khai báo phải xác định số cột của mảng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.6"
+        },
+        {
+          "id": "CONT_02_01_207",
+          "order": 9,
+          "type": "code",
+          "title": "Cú pháp khai báo con trỏ mảng hai chiều",
+          "content": "data_type (*variable_name)[COLS];",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.6"
+        },
+        {
+          "id": "CONT_02_01_208",
+          "order": 10,
+          "type": "text",
+          "title": "Ví dụ sử dụng con trỏ với mảng hai chiều",
+          "content": "Ví dụ sau khai báo một con trỏ ptr có thể trỏ đến một dòng gồm 5 phần tử của mảng mat.",
+          "source": "Bài giảng Chương 2 - mục 2.1.6"
+        },
+        {
+          "id": "CONT_02_01_209",
+          "order": 11,
+          "type": "code",
+          "title": "Con trỏ trỏ đến dòng đầu tiên",
+          "content": "int (*ptr)[5];\nptr = &mat[0];",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.6"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_01_07",
+      "title": "2.1.7 Ma trận thưa",
+      "order": 7,
+      "contents": [
+        {
+          "id": "CONT_02_01_210",
+          "order": 1,
+          "type": "text",
+          "title": "Khái niệm ma trận thưa",
+          "content": "Ma trận thưa (sparse matrix) là ma trận mà đa số các phần tử là 0. Để tăng tính hiệu quả khi thao tác với ma trận, cần dùng các cấu trúc dữ liệu và các thuật toán đặc thù hơn cách sử dụng mảng hai chiều.",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_211",
+          "order": 2,
+          "type": "text",
+          "title": "Các dạng ma trận thưa",
+          "content": "Có ba dạng ma trận thưa được minh họa: ma trận tam giác dưới có các phần tử trên đường chéo chính bằng 0; ma trận tam giác trên có các phần tử dưới đường chéo chính bằng 0; và ma trận ba đường chéo có các phần tử ngoài ba đường chéo bằng 0.",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_212",
+          "order": 3,
+          "type": "image",
+          "title": "Hình 2-13 Ma trận thưa",
+          "content": "Hình 2-13 - Ma trận thưa",
+          "file": "images/hinh2_13.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_213",
+          "order": 4,
+          "type": "text",
+          "title": "Ma trận tam giác dưới",
+          "content": "Với ma trận tam giác dưới, ta có A[i][j] = 0 nếu i < j. Có thể lưu các phần tử khác 0 của ma trận bằng một mảng một chiều.",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_214",
+          "order": 5,
+          "type": "text",
+          "title": "Lưu theo dòng",
+          "content": "Đánh số theo dòng, các phần tử khác 0 của ma trận tam giác dưới được lưu trong mảng một chiều B theo thứ tự từ dòng đầu tiên đến dòng cuối cùng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_215",
+          "order": 6,
+          "type": "code",
+          "title": "Ví dụ lưu ma trận tam giác dưới theo dòng",
+          "content": "B[] = {1, 5, 3, 2, 7, -1, 3, 1, 4, 2, -9, 2, -8, 1, 7};",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_216",
+          "order": 7,
+          "type": "text",
+          "title": "Lưu theo cột",
+          "content": "Đánh số theo cột, các phần tử khác 0 của ma trận tam giác dưới được lưu trong mảng một chiều C theo thứ tự từ cột đầu tiên đến cột cuối cùng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_217",
+          "order": 8,
+          "type": "code",
+          "title": "Ví dụ lưu ma trận tam giác dưới theo cột",
+          "content": "C[] = {1, 5, 2, 3, -9, 3, 7, 1, 2, -1, 4, -8, 2, 1, 7};",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_218",
+          "order": 9,
+          "type": "text",
+          "title": "Xác định phần tử trong ma trận tam giác dưới",
+          "content": "Khi đó phần tử của ma trận hai chiều A[n][n] lưu ma trận tam giác dưới được xác định theo điều kiện giữa chỉ số i và j.",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_219",
+          "order": 10,
+          "type": "code",
+          "title": "Công thức xác định phần tử",
+          "content": "A[i][j] = 0, với i < j\nA[i][j] = B[k], với k = (i * (i + 1)) / 2 + j, với i >= j\nA[i][j] = C[k], với k = (j * (j + 1)) / 2 + i, với i >= j",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_220-",
+          "order": 11,
+          "type": "text",
+          "title": "Ma trận tam giác trên",
+          "content": "Tương tự có thể áp dụng cách lưu trữ bằng mảng một chiều cho ma trận tam giác trên.",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_221",
+          "order": 12,
+          "type": "text",
+          "title": "Ma trận ba đường chéo",
+          "content": "Với ma trận ba đường chéo, ta có A[i][j] = 0 khi |i - j| > 1. Các phần tử khác 0 nằm trên ba đường chéo của ma trận.",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_222",
+          "order": 13,
+          "type": "text",
+          "title": "Ba đường chéo của ma trận",
+          "content": "Đường chéo chính có i = j gồm n phần tử; đường chéo dưới có i = j + 1 gồm n - 1 phần tử; và đường chéo trên có i = j - 1 gồm n - 1 phần tử.",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_223",
+          "order": 14,
+          "type": "text",
+          "title": "Lưu ma trận ba đường chéo",
+          "content": "Với ma trận ba đường chéo, có thể dùng mảng một chiều để lưu các phần tử khác 0 theo thứ tự đường chéo dưới, đường chéo chính và đường chéo trên.",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_224",
+          "order": 15,
+          "type": "code",
+          "title": "Ví dụ lưu ma trận ba đường chéo",
+          "content": "D[] = {5, 9, 4, 5, 8, 4, 1, 3, 2, 1, 7, 1, 2, 1, 2, 9};",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_225",
+          "order": 16,
+          "type": "text",
+          "title": "Xác định phần tử trong ma trận ba đường chéo",
+          "content": "Mảng hai chiều A[5][5] lưu ma trận thưa ba đường chéo được xác định bằng cách kiểm tra khoảng cách giữa chỉ số dòng i và chỉ số cột j.",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_226",
+          "order": 17,
+          "type": "code",
+          "title": "Công thức ma trận ba đường chéo",
+          "content": "A[i][j] = 0, với |i - j| > 1\nA[i][j] = D[k], với |i - j| <= 1\nk = j nếu i = j + 1\nk = n + i nếu i = j\nk = 2 * n + i nếu i = j - 1",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        },
+        {
+          "id": "CONT_02_01_227",
+          "order": 18,
+          "type": "text",
+          "title": "Các cách lưu trữ ma trận thưa",
+          "content": "Ngoài các cách trên dùng cho ma trận thưa có các dạng đặc biệt, còn có nhiều cách tổ chức dữ liệu khác cho ma trận thưa sử dụng danh sách liên kết.",
+          "source": "Bài giảng Chương 2 - mục 2.1.7"
+        }
+      ]
+    },
+    {
+      "id": "SEC_02_01_08",
+      "title": "2.1.8 Ứng dụng của mảng",
+      "order": 8,
+      "contents": [
+        {
+          "id": "CONT_02_01_228",
+          "order": 1,
+          "type": "text",
+          "title": "Ứng dụng của mảng",
+          "content": "Mảng có nhiều ứng dụng trong lập trình nói chung và trong cấu trúc dữ liệu nói riêng. Một số phạm vi ứng dụng của mảng gồm:",
+          "source": "Bài giảng Chương 2 - mục 2.1.8"
+        },
+        {
+          "id": "CONT_02_01_229",
+          "order": 2,
+          "type": "text",
+          "title": "Một số ứng dụng của mảng",
+          "content": "- Dùng cài đặt các công cụ toán học như vector, ma trận, quan hệ.\n- Dùng trong các cơ sở dữ liệu như mảng hai chiều các bản ghi.\n- Mảng dùng cài đặt nhiều cấu trúc dữ liệu thông dụng như string, stack, queue, heap, hash table.\n- Mảng dùng để sắp xếp các phần tử theo thứ tự tăng hoặc giảm.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8"
+        },
+        {
+          "id": "CONT_02_01_230",
+          "order": 3,
+          "type": "text",
+          "title": "Danh sách tổ chức bằng mảng",
+          "content": "Danh sách là một mô hình dữ liệu quan trọng, được sử dụng nhiều trong lập trình. Mảng là một trong những cấu trúc dữ liệu được dùng để tổ chức dữ liệu lưu trữ các loại danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_231",
+          "order": 4,
+          "type": "text",
+          "title": "Danh sách tổ chức bằng mảng",
+          "content": "Danh sách là một mô hình dữ liệu quan trọng, được sử dụng nhiều trong lập trình. Mảng là một trong những cấu trúc dữ liệu được dùng để tổ chức dữ liệu lưu trữ các loại danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_232",
+          "order": 5,
+          "type": "text",
+          "title": "Tổ chức dữ liệu",
+          "content": "Dùng một mảng để lưu các phần tử của danh sách. Các phần tử được lưu từ ô nhớ đầu tiên của mảng và lưu liên tiếp nhau. Dùng một ô nhớ để lưu số phần tử hiện tại của danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_233",
+          "order": 6,
+          "type": "text",
+          "title": "Ví dụ danh sách lưu trong mảng",
+          "content": "Ví dụ: cho danh sách l = (a₀, a₁, ..., a₄₉) được lưu vào mảng như sau:",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_234",
+          "order": 7,
+          "type": "image",
+          "title": "Biểu diễn danh sách bằng mảng",
+          "content": "Danh sách l = (a₀, a₁, ..., a₄₉) được lưu trong mảng",
+          "file": "images/hinh2_14.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_235",
+          "order": 8,
+          "type": "text",
+          "title": "Khai báo danh sách bằng mảng",
+          "content": "Khai báo danh sách bằng mảng.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_236",
+          "order": 9,
+          "type": "code",
+          "title": "Khai báo cấu trúc danh sách",
+          "content": "#define MAX 100\n\nstruct ElementType\n{\n    ...\n};\n\nstruct ArrayList\n{\n    ElementType arr[MAX];\n    int size;\n};",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_237",
+          "order": 10,
+          "type": "text",
+          "title": "Ví dụ danh sách sinh viên",
+          "content": "Ví dụ: khai báo danh sách sinh viên, mỗi sinh viên gồm: họ tên, tuổi và điểm trung bình.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_238",
+          "order": 11,
+          "type": "code",
+          "title": "Khai báo kiểu sinh viên",
+          "content": "struct Student\n{\n    string name;\n    int age;\n    double gpa;\n};",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_239",
+          "order": 12,
+          "type": "code",
+          "title": "Khai báo danh sách sinh viên",
+          "content": "#define max 100\n\nstruct ListOfStudents\n{\n    Student arr[max];\n    int size;\n};",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_240",
+          "order": 13,
+          "type": "text",
+          "title": "Các thao tác trên danh sách",
+          "content": "Các thao tác trên danh sách:\n\nKhởi tạo: tạo danh sách rỗng.\n\nThuật toán: Gán số phần tử của danh sách bằng 0.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_241",
+          "order": 14,
+          "type": "code",
+          "title": "Khởi tạo danh sách rỗng",
+          "content": "void initialize(ArrList &list)\n{\n    list.size = 0;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_242",
+          "order": 15,
+          "type": "text",
+          "title": "Ví dụ khởi tạo danh sách sinh viên",
+          "content": "Ví dụ: khởi tạo danh sách sinh viên.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_243",
+          "order": 16,
+          "type": "code",
+          "title": "Khởi tạo danh sách sinh viên",
+          "content": "void initialize(StudentList &list)\n{\n    list.size = 0;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_244",
+          "order": 17,
+          "type": "text",
+          "title": "Thêm một phần tử vào danh sách",
+          "content": "Cho một danh sách, thêm phần tử x vào vị trí thứ k của danh sách, với k là một số nguyên.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_245",
+          "order": 18,
+          "type": "text",
+          "title": "Danh sách trước khi thêm phần tử",
+          "content": "Hình ảnh của danh sách trước khi thêm phần tử.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_246",
+          "order": 19,
+          "type": "image",
+          "title": "Danh sách trước khi thêm phần tử",
+          "content": "Biểu diễn danh sách trước khi thêm phần tử x vào vị trí thứ k",
+          "file": "images/hinh2_15.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_247",
+          "order": 20,
+          "type": "text",
+          "title": "Thuật toán thêm một phần tử vào danh sách",
+          "content": "Input: Danh sách cần thêm list, phần tử cần thêm x, vị trí thêm k.\nOutput: Danh sách list sau khi thêm.\n\nAction:\n- Chuyển các phần tử của mảng từ vị trí k đến vị trí (size - 1) ra sau 1 vị trí.\n- Đưa phần tử x vào vị trí k của mảng.\n- Tăng số phần tử của danh sách lên 1.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_248",
+          "order": 21,
+          "type": "code",
+          "title": "Cài đặt thêm một phần tử vào danh sách",
+          "content": "void insert(ArrList &list, ElementType x, int k)\n{\n    if (list.size < MAX && k <= list.size)\n    {\n        for (int i = list.size - 1; i >= k; i--)\n            list.arr[i + 1] = list.arr[i];\n\n        list.arr[k] = x;\n        list.size++;\n    }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_249",
+          "order": 22,
+          "type": "text",
+          "title": "Ví dụ thêm sinh viên vào danh sách",
+          "content": "Ví dụ thêm một sinh viên x vào danh sách sinh viên tại vị trí k.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_250",
+          "order": 23,
+          "type": "code",
+          "title": "Thêm một sinh viên vào danh sách",
+          "content": "void insert(ListOfStudents &list, Student x, int k)\n{\n    if (list.size < MAX && k <= list.size)\n    {\n        for (int i = list.size - 1; i >= k; i--)\n            list.arr[i + 1] = list.arr[i];\n\n        list.arr[k] = x;\n        list.size++;\n    }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_251",
+          "order": 24,
+          "type": "text",
+          "title": "Xóa một phần tử trong danh sách",
+          "content": "Xóa một phần tử tại vị trí k trong danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_252",
+          "order": 25,
+          "type": "image",
+          "title": "Xóa phần tử tại vị trí k trong danh sách",
+          "content": "Hình 2-16 - Xóa phần tử tại vị trí k trong danh sách",
+          "file": "images/hinh2_16.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_253",
+          "order": 26,
+          "type": "text",
+          "title": "Thuật toán xóa một phần tử trong danh sách",
+          "content": "Input: Danh sách cần xóa list, vị trí phần tử cần xóa k.\nOutput: Danh sách list sau khi xóa.\n\nAction:\n- Chuyển các phần tử trong mảng từ vị trí sau k ra trước 1 vị trí.\n- Giảm số phần tử của danh sách đi 1.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_254",
+          "order": 27,
+          "type": "code",
+          "title": "Cài đặt xóa một phần tử trong danh sách",
+          "content": "void delete(ArrList &list, int k)\n{\n    if (list.size > 0 && k < list.size - 1)\n    {\n        for (int i = k + 1; i <= list.size - 1; i++)\n            list.arr[i - 1] = list.arr[i];\n\n        list.size--;\n    }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_255",
+          "order": 28,
+          "type": "text",
+          "title": "Ví dụ xóa sinh viên khỏi danh sách",
+          "content": "Ví dụ: xóa sinh viên thứ k trong danh sách sinh viên.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_256",
+          "order": 29,
+          "type": "code",
+          "title": "Xóa sinh viên thứ k trong danh sách",
+          "content": "void delete(ListOfStudents &list, int k)\n{\n    if (list.size > 0 && k < list.size - 1)\n    {\n        for (int i = k + 1; i <= list.size - 1; i++)\n            list.arr[i - 1] = list.ar[i];\n\n        list.size--;\n    }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_257",
+          "order": 30,
+          "type": "text",
+          "title": "Tìm một phần tử trong danh sách",
+          "content": "Cho một danh sách, tìm một phần tử có dữ liệu trên trường khóa là x.\n\nVí dụ trong danh sách sinh viên, cần tìm một sinh viên theo họ tên thì trường khóa là trường họ tên.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_258",
+          "order": 31,
+          "type": "text",
+          "title": "Thuật toán tìm tuần tự",
+          "content": "Input: Danh sách cần tìm list, khóa cần tìm x.\nOutput: True nếu phần tử khóa x có trong danh sách, False nếu ngược lại.\n\nAction:\n- Duyệt lần lượt từng phần tử của danh sách.\n- Nếu phần tử đang xét có khóa trùng với x thì trả về kết quả True.\n- Nếu hết danh sách thì trả về kết quả False.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_259",
+          "order": 32,
+          "type": "code",
+          "title": "Cài đặt thuật toán tìm tuần tự",
+          "content": "bool search(ArrList list, KeyType x)\n{\n    for (int i = 0; i < list.size; i++)\n        if (list.arr[i].key == x)\n            return True;\n\n    return False;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_260",
+          "order": 33,
+          "type": "text",
+          "title": "Ví dụ tìm sinh viên theo họ tên",
+          "content": "Ví dụ: tìm một sinh viên trong danh sách sinh viên có họ tên là x.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_261",
+          "order": 34,
+          "type": "code",
+          "title": "Tìm sinh viên theo họ tên",
+          "content": "bool searchByName(ListOfStudents list, string x)\n{\n    for (int i = 0; i < list.size; i++)\n        if (list.arr[i].name == x)\n            return True;\n\n    return False;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_262",
+          "order": 35,
+          "type": "text",
+          "title": "Tìm và trả về vị trí phần tử",
+          "content": "Để dễ sử dụng, hàm tìm trên danh sách tổ chức bằng mảng thường trả về vị trí phần tử tìm được trong danh sách. Hàm tìm một sinh viên trong danh sách sinh viên có họ tên là x trả về vị trí sinh viên tìm được, nếu không có thì trả về -1.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_263",
+          "order": 36,
+          "type": "code",
+          "title": "Tìm sinh viên và trả về vị trí",
+          "content": "int searchByName(ListOfStudents list, string x)\n{\n    for (int i = 0; i < list.size; i++)\n        if (list.arr[i].name == x)\n            return i;\n\n    return -1;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_264",
+          "order": 37,
+          "type": "text",
+          "title": "Tìm kiếm nhị phân",
+          "content": "Để tìm nhanh trên danh sách tổ chức bằng mảng có thể dùng thuật toán tìm nhị phân. Cài đặt thuật toán tìm nhị phân trên danh sách tổ chức bằng mảng và trên danh sách sinh viên đã sắp theo họ tên xem như bài luyện tập.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_265",
+          "order": 38,
+          "type": "text",
+          "title": "Sắp xếp danh sách",
+          "content": "Cho trước một danh sách, hãy thay đổi thứ tự của các phần tử trong danh sách sao cho dữ liệu của các phần tử trên trường khóa được sắp xếp theo thứ tự tăng hoặc giảm.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_266",
+          "order": 39,
+          "type": "text",
+          "title": "Sắp xếp nổi bọt",
+          "content": "Cài đặt hàm sắp xếp bằng thuật toán sắp xếp nổi bọt.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_267",
+          "order": 40,
+          "type": "code",
+          "title": "Sắp xếp danh sách bằng thuật toán nổi bọt",
+          "content": "void BubbleSort(ArrList &list)\n{\n    int i, j;\n    ElementType tmp;\n\n    for (i = 1; i < list.size; i++)\n        for (j = 1; j <= list.size - i; j++)\n            if (list.arr[j].key < list.arr[j - 1].key)\n            {\n                tmp = list.arr[j];\n                list.ar[j] = list.ar[j - 1];\n                list.ar[j - 1] = tmp;\n            }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_266_2",
+          "order": 41,
+          "type": "text",
+          "title": "Ví dụ sắp xếp sinh viên theo điểm trung bình",
+          "content": "Ví dụ: sắp xếp danh sách sinh viên theo thứ tự giảm của điểm trung bình.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_267_2",
+          "order": 42,
+          "type": "code",
+          "title": "Sắp xếp sinh viên theo GPA giảm dần",
+          "content": "void SortByGPA(ArrList &list)\n{\n    int i, j;\n    Student tmp;\n\n    for (i = 1; i < list.size; i++)\n        for (j = 1; j <= list.size - i; j++)\n            if (list.arr[j].gpa > list.arr[j - 1].gpa)\n            {\n                tmp = list.arr[j];\n                list.ar[j] = list.ar[j - 1];\n                list.ar[j - 1] = tmp;\n            }\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_268",
+          "order": 43,
+          "type": "text",
+          "title": "Nhận xét về danh sách tổ chức bằng mảng",
+          "content": "Ưu điểm: Truy xuất đến các phần tử trực tiếp. Do đó thuận lợi cho các thao tác cần truy xuất trực tiếp các phần tử như tìm nhị phân, quicksort.\n\nNhược điểm:\n- Lãng phí ô nhớ vì có những ô nhớ còn trống do mảng được cấp phát một lần.\n- Các thao tác thêm và xóa phức tạp vì phải thay đổi nhiều phần tử trong danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.1"
+        },
+        {
+          "id": "CONT_02_01_269",
+          "order": 44,
+          "type": "text",
+          "title": "Lớp std::vector trong C++",
+          "content": "Trong C++ cài đặt sẵn lớp vector trong không gian tên std. Đây là lớp mẫu (template class) dùng để thao tác với danh sách các kiểu phần tử khác nhau. Lớp vector của C++ sử dụng cấu trúc mảng động.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.2"
+        },
+        {
+          "id": "CONT_02_01_270",
+          "order": 45,
+          "type": "text",
+          "title": "Đặc trưng của lớp vector",
+          "content": "Một số đặc trưng của lớp vector:\n- Có thể thao tác với nhiều loại danh sách khác nhau, tùy thuộc vào kiểu dữ liệu của mỗi phần tử.\n- Có thể truy xuất theo vị trí của phần tử.\n- Tự động mở rộng mảng khi hết ô nhớ nếu bộ nhớ của máy tính còn trống.\n- Tự động thu hẹp ô nhớ của mảng khi số phần tử của vector còn ít.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.2"
+        },
+        {
+          "id": "CONT_02_01_271",
+          "order": 46,
+          "type": "text",
+          "title": "Cài đặt tóm lược của lớp vector",
+          "content": "Một cài đặt tóm lược của lớp vector có thể tham khảo trong tài liệu [2] (trang 86-91).",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.2"
+        },
+        {
+          "id": "CONT_02_01_272",
+          "order": 47,
+          "type": "text",
+          "title": "Sử dụng lớp vector",
+          "content": "Lớp vector được định nghĩa trong không gian tên std nên khi sử dụng cần khai báo không gian tên std hoặc kèm theo std:: trước tên lớp.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.2"
+        },
+        {
+          "id": "CONT_02_01_273",
+          "order": 48,
+          "type": "code",
+          "title": "Nạp thư viện vector",
+          "content": "#include <vector>",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.2"
+        },
+        {
+          "id": "CONT_02_01_274",
+          "order": 49,
+          "type": "code",
+          "title": "Khai báo biến vector",
+          "content": "std::vector<DataType> variable;",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.2"
+        },
+        {
+          "id": "CONT_02_01_275",
+          "order": 50,
+          "type": "text",
+          "title": "Kiểu phần tử của vector",
+          "content": "Trong đó DataType là kiểu phần tử trong danh sách.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.2"
+        },
+        {
+          "id": "CONT_02_01_276",
+          "order": 51,
+          "type": "code",
+          "title": "Ví dụ khai báo vector",
+          "content": "std::vector<int> listOfInt;\nstd::vector<Student> listOfStudents;",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.2"
+        },
+        {
+          "id": "CONT_02_01_277",
+          "order": 52,
+          "type": "text",
+          "title": "Một số phương thức của vector",
+          "content": "[index]: Truy xuất đến phần tử tại vị trí index. Độ phức tạp O(1).\n\nsize(): Số phần tử trong danh sách. Độ phức tạp O(1).\n\ncapacity(): Kích thước bộ nhớ dùng để lưu trữ cho vector. Độ phức tạp O(1).\n\nempty(): Cho biết vector có rỗng không. Độ phức tạp O(1).\n\nclear(): Xóa các phần tử trong vector. Độ phức tạp O(1).\n\npush_back(e): Thêm một phần tử e vào cuối vector. Độ phức tạp O(1).\n\ninsert(pos, e): Thêm một phần tử e vào vị trí pos. Độ phức tạp O(n).\n\npop_back(): Xóa phần tử cuối cùng của vector. Độ phức tạp O(1).\n\nerase(pos): Xóa phần tử tại vị trí pos trong vector. Độ phức tạp O(n).\n\nat(index): Trả về phần tử tại vị trí index trong vector. Độ phức tạp O(1).\n\nfront(): Trả về phần tử đầu tiên trong vector. Độ phức tạp O(1).\n\nback(): Trả về phần tử cuối cùng trong vector. Độ phức tạp O(1).",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.2"
+        },
+        {
+          "id": "CONT_02_01_278",
+          "order": 53,
+          "type": "text",
+          "title": "Ví dụ minh họa sử dụng vector",
+          "content": "Ví dụ minh họa: chương trình sau minh họa sử dụng vector các số nguyên.",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.2"
+        },
+        {
+          "id": "CONT_02_01_279",
+          "order": 54,
+          "type": "code",
+          "title": "Chương trình minh họa sử dụng vector",
+          "content": "#include <iostream>\n#include <vector>\n\nint main()\n{\n    std::vector<int> numbers; // Define a vector of integers\n\n    // Adding elements to the vector\n    numbers.push_back(10);\n    numbers.push_back(20);\n    numbers.push_back(30);\n    numbers.push_back(40);\n\n    // Printing the elements of the vector\n    std::cout << \"Elements of the vector: \";\n    for (int i = 0; i < numbers.size(); i++)\n    {\n        std::cout << numbers[i] << \" \";\n    }\n\n    std::cout << std::endl;\n\n    // Removing the last element from the vector\n    numbers.pop_back();\n\n    // Printing the updated vector\n    std::cout << \"Elements of the updated vector: \";\n    for (int i = 0; i < numbers.size(); i++)\n    {\n        std::cout << numbers[i] << \" \";\n    }\n\n    std::cout << std::endl;\n\n    return 0;\n}",
+          "format": "cpp",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.2"
+        },
+        {
+          "id": "CONT_02_01_280",
+          "order": 55,
+          "type": "text",
+          "title": "Kết quả chạy chương trình",
+          "content": "Kết quả chạy chương trình:",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.2"
+        },
+        {
+          "id": "CONT_02_01_281",
+          "order": 56,
+          "type": "image",
+          "title": "Kết quả chạy chương trình sử dụng vector",
+          "content": "Kết quả chạy chương trình minh họa sử dụng vector",
+          "file": "images/hinh2_17.png",
+          "source": "Bài giảng Chương 2 - mục 2.1.8.2"
+        }
+      ]
+    }
+  ]
+}
