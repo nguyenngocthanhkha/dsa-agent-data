@@ -1,0 +1,155 @@
+[
+  {
+    "id": "LAB_02_02_01",
+    "lesson_id": "LES_02_02",
+    "order": 1,
+    "title": "Danh sách sinh viên",
+    "outcome": "Thực hành các thao tác cơ bản trên danh sách liên kết đơn.",
+    "tasks": [
+      {
+        "id": "TASK_02_02_01_A",
+        "order": 1,
+        "content": "Đọc một danh sách sinh viên từ tệp văn bản, mỗi sinh viên trên một dòng, giữa các trường cách nhau bởi dấu phẩy, vào một danh sách liên kết đơn lưu danh sách sinh viên.",
+        "hint": "SLLStudent* readFile(const string fileName){...}"
+      },
+      {
+        "id": "TASK_02_02_01_B",
+        "order": 2,
+        "content": "In danh sách sinh viên.",
+        "hint": null
+      },
+      {
+        "id": "TASK_02_02_01_C",
+        "order": 3,
+        "content": "Ghi một danh sách sinh viên ra tệp.",
+        "hint": null
+      },
+      {
+        "id": "TASK_02_02_01_D",
+        "order": 4,
+        "content": "Thêm một sinh viên vào cuối danh sách.",
+        "hint": "Cấp phát ô nhớ kiểu SLLStudents cho biến q, đưa sinh viên cần thêm vào data của q và cho q liên kết đến rỗng. Nếu danh sách rỗng thì gán q cho head; ngược lại tìm p là phần tử cuối danh sách và cho p liên kết đến q."
+      },
+      {
+        "id": "TASK_02_02_01_E",
+        "order": 5,
+        "content": "Tạo danh sách chứa những sinh viên có GPA >= 8 từ một danh sách cho trước.",
+        "hint": null
+      },
+      {
+        "id": "TASK_02_02_01_F",
+        "order": 6,
+        "content": "Tìm một sinh viên theo họ tên.",
+        "hint": null
+      },
+      {
+        "id": "TASK_02_02_01_G",
+        "order": 7,
+        "content": "Xóa một sinh viên theo họ tên.",
+        "hint": "Tìm sinh viên tên x trong danh sách head, gọi p là phần tử tìm được và p1 là phần tử trước p. Nếu tìm được, nếu sinh viên cần xóa là phần tử đầu thì xóa phần tử đầu; ngược lại xóa phần tử sau p1."
+      },
+      {
+        "id": "TASK_02_02_01_H",
+        "order": 8,
+        "content": "Thêm một sinh viên vào vị trí k, với k là một số nguyên.",
+        "hint": "Tạo q là phần tử của SLLStudent và đưa sinh viên cần thêm vào data của q. Nếu k = 0 thì cho q liên kết đến đầu danh sách và gán q cho phần tử đầu. Ngược lại, tìm p là phần tử thứ k-1, cho q liên kết đến sau p và cho p liên kết đến q."
+      },
+      {
+        "id": "TASK_02_02_01_I",
+        "order": 9,
+        "content": "Xóa sinh viên tại vị trí k.",
+        "hint": null
+      },
+      {
+        "id": "TASK_02_02_01_J",
+        "order": 10,
+        "content": "Sắp xếp danh sách sinh viên theo thứ tự giảm của GPA.",
+        "hint": null
+      },
+      {
+        "id": "TASK_02_02_01_K",
+        "order": 11,
+        "content": "Trộn hai danh sách đã sắp theo thứ tự giảm của GPA thành một danh sách đã sắp theo GPA.",
+        "hint": null
+      },
+      {
+        "id": "TASK_02_02_01_L",
+        "order": 12,
+        "content": "Chèn danh sách list2 vào danh sách list1 ngay sau sinh viên có tên t.",
+        "hint": null
+      },
+      {
+        "id": "TASK_02_02_01_M",
+        "order": 13,
+        "content": "Đảo ngược một danh sách sinh viên.",
+        "hint": null
+      }
+    ]
+  },
+  {
+    "id": "LAB_02_01_01",
+    "lesson_id": "LES_02_01",
+    "order": 1,
+    "title": "Danh sách tổ chức bằng mảng",
+    "outcome": "Thực hành các thao tác trên một danh sách cụ thể sử dụng kiểu dữ liệu mảng và làm quen với lớp vector để thao tác với danh sách.",
+    "tasks": [
+      {
+        "id": "TASK_02_01_01_A",
+        "order": 1,
+        "content": "Viết hàm xóa một khách hàng theo tên. Sử dụng hàm này xóa một khách hàng tên Nam.",
+        "hint": "void deleteCustomerByName(ListOfCustomers &list, string name) { } Bổ sung các lệnh trong hàm main()."
+      },
+      {
+        "id": "TASK_02_01_01_B",
+        "order": 2,
+        "content": "Viết hàm tìm khách hàng theo số điện thoại. Sử dụng hàm tìm khách hàng có số điện thoại \"0912345678\".",
+        "hint": "Duyệt từng khách hàng trong danh sách; với mỗi khách hàng, duyệt các số điện thoại để tìm số điện thoại cần tìm. Hàm trả về vị trí khách hàng có số điện thoại cần tìm hoặc -1 nếu không tìm thấy.\n\nPrototype: int findCustomerByPhone(ListOfCustomers list, string phone) { }\n\nBổ sung câu lệnh gọi hàm trong main()."
+      },
+      {
+        "id": "TASK_02_01_01_C",
+        "order": 3,
+        "content": "Viết hàm xóa một số điện thoại cụ thể của khách hàng trong danh sách. Sử dụng hàm để xóa một số điện thoại nhập vào từ bàn phím, sau đó in danh sách khách hàng để kiểm tra.",
+        "hint": "Sử dụng hàm findCustomerByPhone() để tìm khách hàng có số điện thoại cần xóa. Nếu tìm được thì xóa số điện thoại trong danh sách các số điện thoại của khách hàng.\n\nPrototype: void deletePhone(ListOfCustomers &list, string phone) { }\n\nBổ sung câu lệnh gọi hàm trong main()."
+      },
+      {
+        "id": "TASK_02_01_01_D",
+        "order": 4,
+        "content": "Viết hàm thêm một số điện thoại cho một khách hàng có tên cho trước. Sử dụng hàm này thêm số điện thoại \"0989123456\" cho khách hàng tên \"An\".",
+        "hint": "Prototype: void appendPhone(ListOfCustomers &list, string name, string phone) { }\n\nBổ sung câu lệnh gọi hàm trong main()."
+      },
+      {
+        "id": "TASK_02_01_01_E",
+        "order": 5,
+        "content": "Viết hàm thêm một khách hàng vào danh sách khách hàng. Nếu khách hàng chưa có trong danh sách thì thêm vào cuối danh sách; nếu đã có thì cập nhật các số điện thoại của khách hàng nếu chưa có trong danh sách.",
+        "hint": "Tìm khách hàng đã có trong danh sách theo tên. Nếu chưa có thì thêm khách hàng vào cuối danh sách. Nếu đã có thì lấy từng số điện thoại của khách hàng cần thêm và thêm vào danh sách số điện thoại của khách hàng đã có nếu số điện thoại đó chưa có.\n\nPrototype: void mergeCustomer(ListOfCustomers &list, Customer c) { }\n\nBổ sung câu lệnh gọi hàm trong main()."
+      },
+      {
+        "id": "TASK_02_01_01_F",
+        "order": 6,
+        "content": "Dùng vector để quản lý danh sách khách hàng thay cho dùng mảng. Sửa lại các hàm cho phù hợp với cách tổ chức này và phân tích cách tổ chức bằng vector có gì tốt hơn cách dùng mảng.",
+        "hint": "Chuyển cách tổ chức ListOfCustomers từ mảng arrCustomers sang vector và sửa các hàm thao tác tương ứng."
+      }
+    ],
+    "reference": {
+      "data_structure": "#include <iostream>\n#include <vector>\n#define max 100\n\nstruct Customer {\n    string name;\n    string address;\n    vector<string> phoneNumbers;\n};\n\nstruct ListOfCustomers {\n    Customer arrCustomers[max];\n    int numOfCustomers;\n};",
+      "provided_operations": [
+        "inputCustomer(Customer &c)",
+        "outputCustomer(Customer c)",
+        "inputListOfCustomers(ListOfCustomers& list)",
+        "outputListOfCustomers(ListOfCustomers list)",
+        "insertCustomer(ListOfCustomers& list, Customer customer, int index)",
+        "deleteCustomer(ListOfCustomers& list, int index)",
+        "findCustomerByName(ListOfCustomers& list, string name)"
+      ],
+      "main_requirements": [
+        "Nhập một danh sách khách hàng.",
+        "In danh sách vừa nhập lên màn hình.",
+        "Nhập một khách hàng và vị trí cần chèn, sau đó thực hiện chèn khách hàng.",
+        "In danh sách sau khi chèn.",
+        "Nhập tên khách hàng cần tìm, thực hiện tìm và hiển thị kết quả.",
+        "Nhập vị trí khách hàng cần xóa, thực hiện xóa khách hàng tại vị trí cần xóa.",
+        "In danh sách sau khi xóa."
+      ]
+    }
+  }
+]
