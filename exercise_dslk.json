@@ -1,0 +1,176 @@
+{
+  "chapter": {
+    "id": "CH02",
+    "title": "Cấu trúc dữ liệu tuyến tính"
+  },
+  "lesson": {
+    "id": "LES_02_02",
+    "title": "Danh sách liên kết"
+  },
+  "relation": {
+    "type": "HAS_EXERCISE",
+    "target": "LES_02_02"
+  },
+  "exercises": [
+    {
+      "id": "EX_02_02_01",
+      "order": 1,
+      "title": "Bài 2.1",
+      "type": "exercise",
+      "content": "Trình bày thuật toán và cài đặt các thao tác sau trên danh sách sinh viên tổ chức dưới dạng danh sách liên kết đơn.\na) Đếm số sinh viên của danh sách sinh viên.\nb) Thêm một sinh viên vào cuối danh sách.\nc) Tạo danh sách mới chứa những sinh viên có đtb >= 8.\nd) Xóa 1 sinh viên có họ tên x.\ne) Thêm sinh viên vào vị trí k, với k là số nguyên, phần tử đầu tiên có thứ tự là 0.\nf) Xóa sinh viên tại vị trí k, với k là số nguyên.\ng) Chèn một danh sách sinh viên l2 vào danh sách sinh viên l1 ngay sau sinh viên có tên t.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_02",
+      "order": 2,
+      "title": "Bài 2.2",
+      "type": "exercise",
+      "content": "Cho một danh sách liên kết đơn, p là một phần tử trong danh sách. Hãy viết hàm đổi hai phần tử kề nhau ngay sau phần tử p, chỉ được đổi liên kết mà không được đổi dữ liệu.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_03",
+      "order": 3,
+      "title": "Bài 2.3",
+      "type": "exercise",
+      "content": "Cho một danh sách liên kết đơn L và một mảng P chứa các số nguyên được sắp theo thứ tự tăng. Viết hàm printLots(L, P) in những phần tử của L ở các vị trí được xác định trong mảng P. Ví dụ: nếu P = {1, 3, 4, 6} thì in các phần tử của L ở các vị trí 1, 3, 4, 6. Giả sử vị trí phần tử đầu tiên là 0. Cho biết độ phức tạp thời gian của thuật toán cài đặt thao tác trên.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_04",
+      "order": 4,
+      "title": "Bài 2.4",
+      "type": "exercise",
+      "content": "Cho p là một con trỏ đến một nút trong danh sách liên kết đơn, nút p trỏ đến không phải là nút cuối cùng trong danh sách. Giả sử không có con trỏ đến một nút nào khác (trừ các liên kết giữa các nút). Trình bày thuật toán có độ phức tạp O(1) xóa giá trị lưu tại nút p khỏi danh sách, các phần tử còn lại vẫn giữ nguyên thứ tự.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_05",
+      "order": 5,
+      "title": "Bài 2.5",
+      "type": "exercise",
+      "content": "Cài đặt các thuật toán sau trên danh sách liên kết đơn các số nguyên:\na) Đảo ngược danh sách.\nb) Thuật toán Quick sort.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_06",
+      "order": 6,
+      "title": "Bài 2.6",
+      "type": "exercise",
+      "content": "Tổ chức dữ liệu lưu các đa thức P(x) = a_n x^n + a_(n-1) x^(n-1) + ... + a_1 x + a_0 bằng danh sách liên kết đơn như sau: mỗi phần tử trong danh sách liên kết đơn là một hệ số a_k và số mũ k với a_k != 0. Các phần tử lưu theo thứ tự giảm của số mũ và không lưu các thừa số với hệ số 0, trừ trường hợp đa thức không (P(x) = 0).\nHãy khai báo tổ chức dữ liệu, trình bày thuật toán và cài đặt các thao tác:\na) Thêm một hạng tử vào đầu đa thức.\nb) In một đa thức lên màn hình.\nc) Tính giá trị một đa thức khi cho x một giá trị cụ thể.\nd) Cộng hai đa thức.\ne) Tính đạo hàm bậc một của một đa thức.\nf) Nhân hai đa thức.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_07",
+      "order": 7,
+      "title": "Bài 2.7",
+      "type": "exercise",
+      "content": "Một danh sách liên kết đơn có nút header là danh sách liên kết đơn trong đó có một nút đặc biệt ở trước phần tử đầu của danh sách gọi là nút header. Hãy viết các hàm cài đặt các thao tác sau trên danh sách có nút header:\na) Trả về số phần tử của danh sách liên kết.\nb) In danh sách liên kết.\nc) Kiểm tra một giá trị x có trong danh sách liên kết không.\nd) Thêm một giá trị x vào cuối danh sách nếu nó chưa có trong danh sách.\ne) Xóa một giá trị x nếu nó có trong danh sách.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_08",
+      "order": 8,
+      "title": "Bài 2.8",
+      "type": "exercise",
+      "content": "Cho danh sách liên kết đơn với nút header và tail (nút sau phần tử cuối cùng trong danh sách). Hãy trình bày thuật toán có độ phức tạp tính toán O(1) thực hiện:\na) Chèn một giá trị x trước vị trí p.\nb) Xóa giá trị chứa tại vị trí p.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_09",
+      "order": 9,
+      "title": "Bài 2.9",
+      "type": "exercise",
+      "content": "Một cách xóa các phần tử trong danh sách gọi là xóa lười (lazy deletion). Trong cách xóa lười, khi xóa một phần tử chỉ đánh dấu xóa chứ chưa xóa hẳn (gọi là phần tử đã được đánh dấu xóa). Khi có nhiều phần tử được đánh dấu xóa trong danh sách thì duyệt danh sách và thực hiện xóa các phần tử đã được đánh dấu xóa.\na) Cho biết ưu, nhược điểm của thao tác xóa lười.\nb) Cài đặt các thao tác cơ bản trên danh sách liên kết đơn sử dụng thao tác xóa lười.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_10",
+      "order": 10,
+      "title": "Bài 2.10",
+      "type": "exercise",
+      "content": "Viết chương trình cài đặt một danh sách tự điều chỉnh (self-adjusting lists), tất cả các phần tử chèn vào ở đầu. Mỗi khi thực hiện tìm một phần tử thì phần tử này được chuyển lên đầu danh sách mà không thay đổi vị trí tương đối của các phần tử còn lại trong danh sách. Cài đặt một danh sách tự điều chỉnh bằng danh sách liên kết đơn. Bằng thực nghiệm chứng tỏ rằng các phần tử được tìm nhiều sẽ ở gần phần tử đầu.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_11",
+      "order": 11,
+      "title": "Bài 2.11",
+      "type": "exercise",
+      "content": "Để thao tác với các số nguyên lớn, có thể dùng danh sách hai liên kết trong đó dữ liệu tại mỗi nút là một số nguyên không quá 3 chữ số.\nVí dụ: số nguyên n = 12 345 678 được lưu trong danh sách hai liên kết thành các nút chứa 12, 345 và 678.\nHãy khai báo tổ chức dữ liệu cho các số nguyên lớn theo mô tả trên và viết các hàm:\na) Chuyển một số nguyên thành một số nguyên lớn.\nb) Chuyển một xâu ký tự thành một số nguyên lớn.\nc) In số nguyên lớn lên màn hình.\nd) So sánh hai số nguyên lớn theo quan hệ >, <, =.\ne) Cộng hai số nguyên lớn.\nf) Nhân hai số nguyên lớn.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_12",
+      "order": 12,
+      "title": "Bài 2.12",
+      "type": "exercise",
+      "content": "Một cách tổ chức dữ liệu cho ma trận thưa là dùng danh sách trực giao (orthogonal list). Trong cách tổ chức này, mỗi nút trong ma trận thưa gồm các trường:\n- row: chỉ số dòng.\n- col: chỉ số cột.\n- value: giá trị của ma trận tại (row, col).\n- down: con trỏ đến dòng tiếp theo cùng cột với nút.\n- right: con trỏ đến cột tiếp theo cùng dòng với nút.\nĐể quản lý các cột sử dụng một danh sách liên kết lưu chỉ số và con trỏ đến nút đầu tiên của cột chứa giá trị khác 0. Tương tự cho quản lý các dòng. Mỗi ma trận thưa sẽ lưu số dòng, số cột và hai con trỏ đến hai danh sách cột và dòng.\nHãy khai báo tổ chức dữ liệu theo mô tả trên và cài đặt các thao tác:\na) Thêm một giá trị v ở dòng r, cột c của ma trận thưa.\nb) Lấy giá trị của ma trận thưa tại dòng r, cột c.\nc) Tạo một ma trận thưa từ mảng hai chiều m dòng, n cột.\nd) Chuyển một ma trận thưa thành mảng hai chiều.\ne) In một ma trận thưa dưới dạng danh sách các giá trị khác 0 của ma trận: row, col, value.\nf) Tìm vị trí phần tử lớn nhất của ma trận thưa.\ng) Tìm ma trận chuyển vị của một ma trận thưa.\nh) Cộng hai ma trận thưa cùng kích thước.\ni) Nhân hai ma trận thưa có kích thước phù hợp.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_13",
+      "order": 13,
+      "title": "Bài 2.13",
+      "type": "exercise",
+      "content": "Xây dựng cấu trúc dữ liệu hỗ trợ các thao tác push, pop của ngăn xếp và bổ sung thêm thao tác findMin, trả về kết quả là phần tử nhỏ nhất của cấu trúc dữ liệu với độ phức tạp trong trường hợp xấu nhất là O(1).",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_14",
+      "order": 14,
+      "title": "Bài 2.14",
+      "type": "exercise",
+      "content": "Trình bày cách cài đặt cấu trúc dữ liệu hai ngăn xếp bằng một mảng sao cho các ngăn xếp chỉ đầy khi mảng đã đầy.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_15",
+      "order": 15,
+      "title": "Bài 2.15",
+      "type": "exercise",
+      "content": "Trình bày cách tổ chức dữ liệu ba ngăn xếp trên một mảng.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_16",
+      "order": 16,
+      "title": "Bài 2.16",
+      "type": "exercise",
+      "content": "Trình bày cách tổ chức dữ liệu cho hàng đợi hai đầu (deque), tức là thao tác thêm vào và lấy ra có thể thực hiện trên cả hai đầu của hàng đợi. Cài đặt các thao tác với độ phức tạp thời gian O(1).\na) push(x) - Thêm phần tử x vào đầu deque.\nb) pop() - Xóa phần tử đầu khỏi deque và trả về phần tử này.\nc) inject(x) - Thêm phần tử x vào cuối deque.\nd) eject() - Xóa phần tử cuối deque và trả về phần tử này.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_17",
+      "order": 17,
+      "title": "Bài 2.17",
+      "type": "exercise",
+      "content": "Một cách khác để cài đặt hàng đợi là sử dụng danh sách liên kết vòng không chứa header. Cho phép sử dụng một con trỏ trỏ đến một nút trong danh sách liên kết vòng.\na) Cho biết độ phức tạp của các thao tác trên hàng đợi trong trường hợp xấu nhất nếu dùng con trỏ đến phần tử đầu của danh sách.\nb) Cho biết độ phức tạp của các thao tác trên hàng đợi trong trường hợp xấu nhất nếu dùng con trỏ đến phần tử cuối cùng của danh sách.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_18",
+      "order": 18,
+      "title": "Bài 2.18",
+      "type": "exercise",
+      "content": "Bài toán Josephus được chơi như sau: có N người đánh số từ 1 đến N, ngồi thành một vòng tròn. Bắt đầu từ người số 1, một củ khoai tây nóng được chuyển sang người ngồi cạnh bên trái. Sau M lần chuyền, người giữ củ khoai tây đi ra ngoài và củ khoai tây được chuyển cho người tiếp theo. Người cuối cùng còn lại là người chiến thắng. Nếu M = 0, N = 5, người chiến thắng là người số 5. Nếu M = 1, N = 5, thứ tự người phải đi ra là 2, 4, 1, 5. Người chiến thắng là người số 3. Viết chương trình giải bài toán Josephus sao cho độ phức tạp thuật toán tốt nhất.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_19",
+      "order": 19,
+      "title": "Bài 2.19",
+      "type": "exercise",
+      "content": "Một danh sách liên kết chứa một vòng tròn nếu xuất phát từ một nút p nào đó, sau một số lần chuyển sang phần tử tiếp theo thì quay lại đúng nút p. Lưu ý p không nhất thiết phải là nút đầu tiên trong danh sách. Giả sử danh sách có N nút, tuy nhiên ta không biết số N là bao nhiêu. Thiết kế thuật toán có độ phức tạp thời gian O(N) và độ phức tạp bộ nhớ O(1) để xác định xem danh sách có vòng tròn không.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    },
+    {
+      "id": "EX_02_02_20",
+      "order": 20,
+      "title": "Bài 2.20",
+      "type": "exercise",
+      "content": "Sử dụng các kiểu stack và queue đã có, trình bày thuật toán và cài đặt các thao tác sau:\na) Lấy ra phần tử thứ k của hàng đợi.\nb) Thêm một phần tử vào vị trí k của ngăn xếp.\nc) Đảo ngược thứ tự của hàng đợi.\nd) Tìm khóa nhỏ nhất của ngăn xếp.",
+      "source": "Bài giảng Chương 2 - mục 2.6 Bài tập"
+    }
+  ]
+}
